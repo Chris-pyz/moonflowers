@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
 # user sans les photos avatars
 anna = User.create(name: 'Anaïs', nickname: 'Anna', email: 'anna@lewagon.com', password: '123456', self_description: "J'aime la nature et je suis souriante")
 arnaud = User.create(name: 'Arnaud', nickname: 'Arno', email: 'arnaud@lewagon.com', password: '123456', self_description: "J'aime la nature et le sport")
