@@ -1,3 +1,3 @@
 class Waste < ApplicationRecord
-  belongs_to :action
+  belongs_to :activity
 end

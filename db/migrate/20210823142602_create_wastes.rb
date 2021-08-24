@@ -3,7 +3,7 @@ class CreateWastes < ActiveRecord::Migration[6.0]
     create_table :wastes do |t|
       t.integer :quantity
       t.string :material
-      t.references :action, null: false, foreign_key: true
+      t.references :activity, null: false, foreign_key: true
 
       t.timestamps
     end

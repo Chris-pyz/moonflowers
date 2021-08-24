@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2021_08_24_130533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actions", force: :cascade do |t|
-    t.float "longitude"
+  create_table "activities", force: :cascade do |t|
     t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_actions_on_user_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 2021_08_24_130533) do
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "action_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["action_id"], name: "index_likes_on_action_id"
+    t.index ["activity_id"], name: "index_likes_on_activity_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -73,15 +73,18 @@ ActiveRecord::Schema.define(version: 2021_08_24_130533) do
   create_table "wastes", force: :cascade do |t|
     t.integer "quantity"
     t.string "material"
-    t.bigint "action_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["action_id"], name: "index_wastes_on_action_id"
+    t.index ["activity_id"], name: "index_wastes_on_activity_id"
   end
 
-  add_foreign_key "actions", "users"
+
+  add_foreign_key "activities", "users"
+  add_foreign_key "likes", "activities"
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "likes", "actions"
+
   add_foreign_key "likes", "users"
-  add_foreign_key "wastes", "actions"
+  add_foreign_key "wastes", "activities"
 end
