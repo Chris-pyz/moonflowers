@@ -1,7 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div id="mainMenuBarAnchor">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="menu">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+    <%= image_tag "https://pngset.com/images/trash-can-pink-pink-garbage-can-mailbox-letterbox-tin-transparent-png-167267.png" %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,9 +12,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
@@ -32,4 +30,5 @@
       <% end %>
     </ul>
   </div>
+</div>
 </div>
