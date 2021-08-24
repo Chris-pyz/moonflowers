@@ -12,6 +12,10 @@
         <%= f.input :latitude %>
         <%= f.input :longitude %>
         <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.simple_fields_for Waste.new do |waste| %>
+        <%= waste.input :material %>
+        <%= waste.input :quantity %>
+        <% end %>
       </div>
       <div class=“form-action”>
         <%= f.button :submit %>

@@ -13,14 +13,18 @@ class ActivitiesController < ApplicationController
   # get /activities/new -new_action_path
   def new
     @activity = Activity.new
+    @activity.wastes.build
   end
 
   # post /activities -action_path
   def create
     @activity = Activity.new(activities_params)
-    @activity.user = current_user
 
+    @activity.user = current_user
     if @activity.save
+      @waste = Waste.new(wastes_params)
+      @waste.activity = @activity
+      @waste.save
       redirect_to @activity, notice: 'Your activity was successfully created.'
     else
       render :new
@@ -52,7 +56,10 @@ class ActivitiesController < ApplicationController
   private
 
   def activities_params
-    params.require(:activity).permit(:longitude, :latitude)
+    params.require(:activity).permit(:longitude, :latitude, wastes_attributes: [:material, :quantity])
   end
 
+  def wastes_params
+    params[:activity].require(:waste).permit(:material, :quantity)
+  end
 end
