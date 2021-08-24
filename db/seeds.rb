@@ -13,14 +13,14 @@ chris = User.create(name: 'Christophe', nickname: 'Chris', email: 'chris@lewagon
 genevieve = User.create(name: 'Genevieve', nickname: 'Geai', email: 'genevieve@lewagon.com', password:'123456', self_description: "J'aime la nature et les livres")
 kevin = User.create(name: 'Kevin', nickname: 'kev', email: 'kevin@lewagon.com', password: '123456', self_description: "J'aime la nature et les voyages")
 
-Action.destroy_all
-# action
-a1 = Action.create(longitude: 5.371960639953613, latitude: 43.26214599609375, user: anna)
+Activity.destroy_all
+# Activity
+a1 = Activity.create(longitude: 5.371960639953613, latitude: 43.26214599609375, user: anna)
 
-a2 = Action.create(longitude: 5.4047562, latitude: 43.313862, user: arnaud)
+a2 = Activity.create(longitude: 5.4047562, latitude: 43.313862, user: arnaud)
 
-a3 = Action.create(longitude: 5.38107, latitude: 43.29695, user: chris)
+a3 = Activity.create(longitude: 5.38107, latitude: 43.29695, user: chris)
 
-a4 = Action.create(longitude: 5.383674621582031, latitude: 43.29341125488281, user: genevieve)
+a4 = Activity.create(longitude: 5.383674621582031, latitude: 43.29341125488281, user: genevieve)
 
-a5 = Action.create(longitude: 5.355508327484131, latitude: 43.290714263916016, user: kevin)
+a5 = Activity.create(longitude: 5.355508327484131, latitude: 43.290714263916016, user: kevin)
