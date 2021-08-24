@@ -4,7 +4,7 @@
     <li> <%= @user.nickname %></li>
     <li>self-description : <%= @user.self_description %></li>
     <%= link_to "home", root_path %>
-     <%= link_to "back", user_path %>
+     <%= link_to "back", users_path %>
      <% if @user.avatar_photo.attached? %>
      <%= cl_image_tag @user.avatar_photo.key, height: 80, width: 80, crop: :fill %>
      <% end %>
