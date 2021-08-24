@@ -1,1 +1,8 @@
-<h1>Dashbord profile user</h1>
+<h1>Welcome to dashbord's <%= @user.nickname %></h1>
+
+<div class="show-user-card">
+    <li> <%= @user.nickname %></li>
+    <li>self-description : <%= @user.self_description %></li>
+    <%= link_to "home", root_path %>
+     <%= link_to "back", users_path %>
+ </div>

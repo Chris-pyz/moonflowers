@@ -1,0 +1,17 @@
+<div class="form-user">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        User's<%= f.input :name %>
+        <%= f.input :nickname %>
+        <%= f.input :self_description %>
+
+      </div>
+
+      <div class="form-action">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
