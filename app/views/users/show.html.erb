@@ -1,1 +1,11 @@
-<h1>Dashbord profile user</h1>
+<h1>Welcome to dashbord's <%= @user.nickname %></h1>
+
+<div class="show-user-card">
+    <li> <%= @user.nickname %></li>
+    <li>self-description : <%= @user.self_description %></li>
+    <%= link_to "home", root_path %>
+     <%= link_to "back", users_path %>
+     <% if @user.avatar_photo.attached? %>
+     <%= cl_image_tag @user.avatar_photo.key, height: 80, width: 80, crop: :fill %>
+     <% end %>
+ </div>
