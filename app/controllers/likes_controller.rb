@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     @like = Like.find(params[:id])
   end
 
-    def edit
+  def edit
     @like = current_user
   end
 
