@@ -46,14 +46,9 @@ class UsersController < ApplicationController
     end
   end
 
-  # /users/:id
-  def destroy
-  end
-
   private
 
   def user_params
     params.require(:user).permit(:nickname, :name, :self_description)
   end
-
 end
