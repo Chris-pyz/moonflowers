@@ -19,7 +19,6 @@ class ActivitiesController < ApplicationController
   # post /activities -action_path
   def create
     @activity = Activity.new(activities_params)
-
     @activity.user = current_user
     if @activity.save
       @waste = Waste.new(wastes_params)
@@ -39,7 +38,7 @@ class ActivitiesController < ApplicationController
   # patch(post?) /activities/:id -action_path
   def update
     @activity = Activity.find(params[:id])
-    if @activity.update(action_params)
+    if @activity.update(activity_params)
       redirect_to user_path(current_user), notice: 'Votre action a été correctement mise à jour.'
     else
       render :edit
