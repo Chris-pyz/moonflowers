@@ -1,9 +1,8 @@
-<h1>Editing Spaceship</h1>
+<h1>Modification de la collecte</h1>
 
 <div class="form-container">
-  <div class="form-spaceship">
-      <h2>Modifie ta collecte</h2>
-  <div class=“form-action-new”>
+  <div class="form-activity-edit">
+  <div class=“form-activity-new”>
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
