@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users
   resources :activities do
     resources :wastes
-    resources :likes, only: [:update, :edit, :show]
+    resources :likes, only: [:create]
   end
 end
