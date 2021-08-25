@@ -10,3 +10,21 @@
         <%= cl_image_tag @user.avatar_photo.key, height: 80, width: 80 %>
      <% end %>
 </div>
+
+<div class="card-show-user_activites">
+    <div class="activities-description"><p> description action</p></div>
+    <div class="user-activities-historic">
+      <p><u>Mes actions </u></p>
+
+      <% @user.activities.each do |activity| %>
+        <p> <%= activity.latitude %></p>
+        <p> <%= activity.longitude %></p>
+        <% if activity.waste %>
+          <p> <%= activity.waste.quantity %></p>
+          <p> <%= activity.waste.material %></p>
+        <% end %>
+        <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
+      <% end %>
+
+    </div>
+</div>
