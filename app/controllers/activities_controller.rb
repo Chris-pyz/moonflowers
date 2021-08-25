@@ -49,7 +49,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to root_path, notice: 'Votre action a été supprimée.'
+    redirect_to user_path(current_user), notice: 'Votre action a été supprimée.'
   end
 
   private

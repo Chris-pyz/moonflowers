@@ -20,10 +20,17 @@
         <p> <%= activity.latitude %></p>
         <p> <%= activity.longitude %></p>
         <% if activity.waste %>
-          <p> <%= activity.waste.quantity %></p>
-          <p> <%= activity.waste.material %></p>
+            <p> <%= activity.waste.quantity %></p>
+            <p> <%= activity.waste.material %></p>
+          <% if activity.user == current_user %>
+              <%= link_to 'Modifier', edit_activity_path(activity) %>
+          <% end %>
         <% end %>
-        <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
+
+        <% if activity.user == current_user %>
+          <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
+        <% end %>
+<hr>
       <% end %>
 
     </div>
