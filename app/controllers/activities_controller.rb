@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
       @waste = Waste.new(wastes_params)
       @waste.activity = @activity
       @waste.save
-      redirect_to @activity, notice: 'Your activity was successfully created.'
+      redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'
     else
       render :new
     end
@@ -40,18 +40,18 @@ class ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
     if @activity.update(action_params)
-      redirect_to @activity, notice: 'Your activity was successfully update.'
+      redirect_to user_path(current_user), notice: 'Votre action a été correctement mise à jour.'
     else
       render :edit
     end
   end
 
   # delete /activities/:id -action_path
-  # def destroy
-  #   @activity = Activity.find(params[:id])
-  #   @activity.destroy
-  #   redirect_to actions_path, notice: 'Your activity was successfully destroyed.'
-  # end
+  def destroy
+   @activity = Activity.find(params[:id])
+   @activity.destroy
+    redirect_to user_path(current_user), notice: 'Votre action a été supprimée.'
+  end
 
   private
 
