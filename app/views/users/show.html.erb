@@ -19,12 +19,16 @@
       <% @user.activities.each do |activity| %>
         <p> <%= activity.latitude %></p>
         <p> <%= activity.longitude %></p>
+        <p>acitivy id <%= activity.id %></p>
+
         <% if activity.waste %>
             <p> <%= activity.waste.quantity %></p>
             <p> <%= activity.waste.material %></p>
-          <% if activity.user == current_user %>
-              <%= link_to 'Modifier', edit_activity_path(activity) %>
-          <% end %>
+            <p>waste id <%= activity.waste.id %></p>
+        <% end %>
+
+        <% if activity.user == current_user %>
+          <%= link_to 'Modifier', edit_activity_path(activity) %>
         <% end %>
 
         <% if activity.user == current_user %>

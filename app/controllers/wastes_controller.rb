@@ -17,6 +17,21 @@ class WastesController < ApplicationController
     end
   end
 
+  def edit
+    @waste = Waste.find(params[:id])
+  end
+
+  # patch(post?) /activities/:id -action_path
+  def update
+    @activity = Activity.find(params[:activity_id])
+    @waste = Waste.find(params[:id])
+    if @waste.update(waste_params)
+      redirect_to @activity, notice: 'Votre détritus a été correctement mise à jour.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def waste_params

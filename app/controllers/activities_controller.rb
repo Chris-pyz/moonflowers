@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
       }
     end
   end
-  
+
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
@@ -42,11 +42,13 @@ class ActivitiesController < ApplicationController
   # get /activities/:id/edit -edit_action_path
   def edit
     @activity = Activity.find(params[:id])
+    @waste = Waste.find(params[:id])
   end
 
   # patch(post?) /activities/:id -action_path
   def update
     @activity = Activity.find(params[:id])
+    @waste.activity = @activity
     if @activity.update(activities_params)
       redirect_to @activity, notice: 'Votre action a été correctement mise à jour.'
     else
