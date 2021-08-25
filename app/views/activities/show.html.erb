@@ -1,38 +1,33 @@
-<h1>Your activity details</h1>
+<h1>Détails de ton action:</h1>
 
-navbar menu
-
-<%= link_to 'Back home', root_path, class: "btn-back-home-page" %>
-
+<%= link_to 'Accueil', root_path, class: "btn-back-home-page" %>
 
 <div class="container-action-show">
 
-
 <div class="card-info-user-action-show">
   avatar photo
-  <%= @user %>
-  location user and number of commitments
+  <%= @activity.user.nickname %>
 </div>
 
+<%= link_to "Profile", user_path(current_user) %>
 
+<div><h1>Collecte du jour </h1></div>
+<p> <%= @activity.latitude %></p>
+<p> <%= @activity.longitude %></p>
+<p> <%= @activity.waste.quantity %></p>
+<p> <%= @activity.waste.material %></p>
 
-<div><h1>Your daily collect:</h1></div>
-  <div class="form-resume-action-show">
-    <%# <p> Time.now ???????? </p>
-    <p> collected: <%= waste.all %></p>
-    <%# <p> collected: <%= waste.type %></p>
-    <%# <p> Address: <%= action.longitude, action.latitude %></p>
-  </div>
-<div>
+<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 
-<div><h1>Moonflower's map:</h1></div>
+<div><h1>Carte des moonflowers:</h1></div>
 
 
 <div class="map-action-show">
+  <p> carte </p>
+</div> %>
 
-<p> map </p>
-
-
+<div class="button-show-activiy">
+    <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
 </div>
 
 
