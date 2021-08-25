@@ -3,8 +3,17 @@ class ActivitiesController < ApplicationController
   # get /activities -actions_path
   def index
     @activities = Activity.all
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "shared/info_window", locals: { activity: activity }),
+        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      }
+    end
   end
-
+  
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
@@ -19,13 +28,12 @@ class ActivitiesController < ApplicationController
   # post /activities -action_path
   def create
     @activity = Activity.new(activities_params)
-
     @activity.user = current_user
     if @activity.save
       @waste = Waste.new(wastes_params)
       @waste.activity = @activity
       @waste.save
-      redirect_to @activity, notice: 'Your activity was successfully created.'
+      redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'
     else
       render :new
     end
@@ -39,19 +47,19 @@ class ActivitiesController < ApplicationController
   # patch(post?) /activities/:id -action_path
   def update
     @activity = Activity.find(params[:id])
-    if @activity.update(action_params)
-      redirect_to @activity, notice: 'Your activity was successfully update.'
+    if @activity.update(activity_params)
+      redirect_to user_path(current_user), notice: 'Votre action a été correctement mise à jour.'
     else
       render :edit
     end
   end
 
   # delete /activities/:id -action_path
-  # def destroy
-  #   @activity = Activity.find(params[:id])
-  #   @activity.destroy
-  #   redirect_to actions_path, notice: 'Your activity was successfully destroyed.'
-  # end
+  def destroy
+   @activity = Activity.find(params[:id])
+   @activity.destroy
+    redirect_to user_path(current_user), notice: 'Votre action a été supprimée.'
+  end
 
   private
 
@@ -62,4 +70,5 @@ class ActivitiesController < ApplicationController
   def wastes_params
     params[:activity].require(:waste).permit(:material, :quantity)
   end
+
 end
