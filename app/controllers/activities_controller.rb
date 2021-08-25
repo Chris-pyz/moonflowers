@@ -38,8 +38,8 @@ class ActivitiesController < ApplicationController
   # patch(post?) /activities/:id -action_path
   def update
     @activity = Activity.find(params[:id])
-    if @activity.update(activity_params)
-      redirect_to user_path(current_user), notice: 'Votre action a été correctement mise à jour.'
+    if @activity.update(activities_params)
+      redirect_to @activity, notice: 'Votre action a été correctement mise à jour.'
     else
       render :edit
     end
@@ -47,9 +47,9 @@ class ActivitiesController < ApplicationController
 
   # delete /activities/:id -action_path
   def destroy
-   @activity = Activity.find(params[:id])
-   @activity.destroy
-    redirect_to user_path(current_user), notice: 'Votre action a été supprimée.'
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to root_path, notice: 'Votre action a été supprimée.'
   end
 
   private

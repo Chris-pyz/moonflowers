@@ -2,3 +2,7 @@
 
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= link_to "Profil", user_path(current_user) %>
+<%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
+<%= link_to "S'aime ton action", new_activity_path %>
