@@ -9,6 +9,8 @@
   <%= @activity.user.nickname %>
 </div>
 
+
+
 <%= link_to "Profile", user_path(current_user) %>
 
 <div><h1>Collecte du jour </h1></div>
@@ -16,6 +18,7 @@
 <p> <%= @activity.longitude %></p>
 <p> <%= @activity.waste.quantity %></p>
 <p> <%= @activity.waste.material %></p>
+
 
 <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 
