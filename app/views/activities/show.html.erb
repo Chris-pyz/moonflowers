@@ -4,37 +4,39 @@
 
 <div class="container-action-show">
 
-<div class="card-info-user-action-show">
-  avatar photo
-  <%= @activity.user.nickname %>
-</div>
+  <div class="card-info-user-action-show">
+    avatar photo
+    <%= @activity.user.nickname %>
+  </div>
+
+  <%= link_to "Profile", user_path(current_user) %>
+
+  <div><h1>Collecte du jour </h1></div>
+  <p> <%= @activity.latitude %></p>
+  <p> <%= @activity.longitude %></p>
+  <p> <%= @activity.waste.quantity %></p>
+  <p> <%= @activity.waste.material %></p>
 
 
-
-<%= link_to "Profile", user_path(current_user) %>
-
-<div><h1>Collecte du jour </h1></div>
-<p> <%= @activity.latitude %></p>
-<p> <%= @activity.longitude %></p>
-<p> <%= @activity.waste.quantity %></p>
-<p> <%= @activity.waste.material %></p>
+  <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
+  <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
 
 
-<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p> 
-<%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
+  <div><h1>Carte des moonflowers:</h1></div>
 
 
-<div><h1>Carte des moonflowers:</h1></div>
+  <div class="map-action-show">
+    <p> carte </p>
+  </div>
 
-
-<div class="map-action-show">
-  <p> carte </p>
-</div> %>
-
-<div class="button-show-activiy">
-    <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
-</div>
-
-
+  <div class="button-show-activiy">
+      <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
+  </div>
+  <div>
+  <%= link_to activity_likes_path(@activity), method: :create do %>
+   <div><i class="far fa-thumbs-up" ></i></div>
+  <% end %>
+  <%= @activity.likes.count  %>
+  </div>
 
 </div>
