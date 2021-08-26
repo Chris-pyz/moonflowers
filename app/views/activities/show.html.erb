@@ -1,4 +1,4 @@
-<h1>Détails de ton action:</h1>
+<h1>Récapitulatif de ton action:</h1>
 
 <%= link_to 'Accueil', root_path, class: "btn-back-home-page" %>
 
@@ -9,6 +9,8 @@
   <%= @activity.user.nickname %>
 </div>
 
+
+
 <%= link_to "Profile", user_path(current_user) %>
 
 <div><h1>Collecte du jour </h1></div>
@@ -17,7 +19,10 @@
 <p> <%= @activity.waste.quantity %></p>
 <p> <%= @activity.waste.material %></p>
 
-<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
+
+<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p> 
+<%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
+
 
 <div><h1>Carte des moonflowers:</h1></div>
 
@@ -29,6 +34,7 @@
 <div class="button-show-activiy">
     <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
 </div>
+
 
 
 </div>

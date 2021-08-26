@@ -3,8 +3,17 @@ class ActivitiesController < ApplicationController
   # get /activities -actions_path
   def index
     @activities = Activity.all
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "shared/info_window", locals: { activity: activity }),
+        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      }
+    end
   end
-
+  
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
@@ -38,8 +47,8 @@ class ActivitiesController < ApplicationController
   # patch(post?) /activities/:id -action_path
   def update
     @activity = Activity.find(params[:id])
-    if @activity.update(activity_params)
-      redirect_to user_path(current_user), notice: 'Votre action a été correctement mise à jour.'
+    if @activity.update(activities_params)
+      redirect_to @activity, notice: 'Votre action a été correctement mise à jour.'
     else
       render :edit
     end
@@ -47,8 +56,8 @@ class ActivitiesController < ApplicationController
 
   # delete /activities/:id -action_path
   def destroy
-   @activity = Activity.find(params[:id])
-   @activity.destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
     redirect_to user_path(current_user), notice: 'Votre action a été supprimée.'
   end
 
@@ -61,4 +70,5 @@ class ActivitiesController < ApplicationController
   def wastes_params
     params[:activity].require(:waste).permit(:material, :quantity)
   end
+
 end
