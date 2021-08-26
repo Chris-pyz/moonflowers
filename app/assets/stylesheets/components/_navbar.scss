@@ -10,7 +10,6 @@
   box-shadow: 0 0 12px #888888;
 }
 
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
@@ -25,4 +24,32 @@
 .thecontent {
   margin-top: 100px;
   margin-bottom: 50px;
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    text-align: center;
+    list-style: inside;
+}
+
+.navbar-nav li {
+    margin-right: 60px;
+    margin-left: 20px;
+    list-style: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 150px;
+    width: 100%;
+}
+
+.navbar-collapse {
+  margin: 10px 20px;
 }
