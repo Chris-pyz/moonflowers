@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   # /users
   def index
+    @user = current_user
     @users = User.all
   end
 
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
   def show
     # @user = current_user
     @user = User.find(params[:id])
-
   end
 
   # -----------   en attente de savoir si utile ----------
