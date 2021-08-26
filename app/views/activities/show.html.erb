@@ -18,6 +18,7 @@
 <div><h3>Collecte du jour </h3></div>
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
+
 <p>You picked up <%= @activity.waste.quantity %> <%= @activity.waste.material %> rubbish ! Congratulation.</p>
 
 
@@ -27,6 +28,15 @@
 <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
   <i class="far fa-trash-alt fa-sm"></i>
 <% end %>
+
+<% if @activity.waste %>
+<p> <%= @activity.waste.quantity %></p>
+<p> <%= @activity.waste.material %></p>
+<% end %>
+
+<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
+<%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
+
 
 
 <div><br><h3>Carte des moonflowers</h3></div>
