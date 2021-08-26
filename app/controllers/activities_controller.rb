@@ -45,11 +45,20 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activities_params)
     @activity.user = current_user
+
     if @activity.save
       @waste = Waste.new(wastes_params)
       @waste.activity = @activity
       @waste.save
       redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'
+
+      @markers = [{
+        lat: @activity.latitude,
+        lng: @activity.longitude,
+        info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
+        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      }]
+
     else
       render :new
     end
