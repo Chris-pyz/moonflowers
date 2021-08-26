@@ -32,6 +32,7 @@ document.addEventListener('turbolinks:load', () => {
 
 // External imports
 import "bootstrap";
+import { showActivityMap } from '../components/showactivitymap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

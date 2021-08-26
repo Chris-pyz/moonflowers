@@ -3,10 +3,13 @@
 
 
 
-<div class="form-container">
-
 <%# <h2 style=“background-image: url()” width:100%=“” heigth=“” 30px=“”>New action</h2> %>
   <h2>Détails de la collecte</h2>
+        <div id="map-new-activity"
+        style="width: 50%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
   <div class=“form-action-new”>
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
@@ -25,5 +28,7 @@
       </div>
     <% end %>
   </div>
+
+
 
 </div>

@@ -31,6 +31,14 @@ class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
     @activity.wastes.build
+
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
+      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+
+    }]
   end
 
   # post /activities -action_path

@@ -1,4 +1,4 @@
-
+import {showActivityMap} from "./showactivitymap";
 
 
 
@@ -9,6 +9,7 @@ const longitude = document.querySelector("#activity_longitude");
 function showPosition(position) {
   latitude.value = position.coords.latitude;
   longitude.value = position.coords.longitude;
+  showActivityMap();
 }
 
 window.addEventListener('load', (event) => {
