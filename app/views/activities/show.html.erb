@@ -16,11 +16,12 @@
 <div><h1>Collecte du jour </h1></div>
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
+<% if activity.waste %>
 <p> <%= @activity.waste.quantity %></p>
 <p> <%= @activity.waste.material %></p>
+<% end %>
 
-
-<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p> 
+<p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
 
 
