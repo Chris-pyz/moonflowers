@@ -1,21 +1,34 @@
-<h1>Récapitulatif de ton action:</h1>
+<br>
+<div class="card-trip">
+  <div class="dash-content">
 
-<%= link_to 'Accueil', root_path, class: "btn-back-home-page" %>
+<h3>Récapitulatif de ton action</h3>
 
 <div class="container-action-show">
 
 <div class="card-info-user-action-show">
-  avatar photo
-  <%= @activity.user.nickname %>
+  <%= link_to user_path(current_user) do %>
+    <%= @activity.user.nickname %>
+  <% end %>
 </div>
+<br>
 
 
 
-<%= link_to "Profile", user_path(current_user) %>
-
-<div><h1>Collecte du jour </h1></div>
+<div><h3>Collecte du jour </h3></div>
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
+
+<p>You picked up <%= @activity.waste.quantity %> <%= @activity.waste.material %> rubbish ! Congratulation.</p>
+
+
+<%= link_to edit_activity_path(@activity) do %>
+  <i class="fas fa-pencil-alt fa-sm"></i>
+<% end %>
+<%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
+  <i class="far fa-trash-alt fa-sm"></i>
+<% end %>
+
 <% if @activity.waste %>
 <p> <%= @activity.waste.quantity %></p>
 <p> <%= @activity.waste.material %></p>
@@ -25,17 +38,19 @@
 <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
 
 
-<div><h1>Carte des moonflowers:</h1></div>
+
+<div><br><h3>Carte des moonflowers</h3></div>
 
 
 <div class="map-action-show">
   <p> carte </p>
-</div> %>
+</div>
 
 <div class="button-show-activiy">
     <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
 </div>
 
+</div>
 
-
+</div>
 </div>

@@ -1,17 +1,11 @@
 <div class="card-trip">
   <div class="card-trip-infos">
       <h2>Would you like to take Action ?</h2>
-      <button type="button">My Turn</button>
-  </div>
-</div>
-
-<div class="card-trip">
-  <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>MoonFlower latest news</h2>
-      <p>see more...</p>
-    </div>
+      <%= link_to new_activity_path do %>
+        <span style="font-size: 2em; color: green; padding: 18px">
+          <i class="fas fa-recycle"></i>
+        </span>
+      <% end %>
   </div>
 </div>
 
@@ -20,6 +14,16 @@
   <div class="card-trip-infos">
     <div>
       <h2>MoonFlowers community</h2>
+      <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
+    </div>
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>MoonFlower latest news</h2>
       <p>see more...</p>
     </div>
   </div>
@@ -35,7 +39,3 @@
     </div>
   </div>
 </div>
-
-
-<%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
-<%= link_to "S'aime ton action", new_activity_path %>

@@ -1,7 +1,7 @@
 <div id="mainMenuBarAnchor">
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="menu">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://pngset.com/images/trash-can-pink-pink-garbage-can-mailbox-letterbox-tin-transparent-png-167267.png" %>
+    <%= image_tag "logo.png" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
       <% if user_signed_in? %>
 
         <li class="nav-item dropdown">
-          <%= image_tag "https://freeiconshop.com/wp-content/uploads/edd/trash-var-flat.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://image.flaticon.com/icons/png/512/861/861143.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Create event", "#", class: "dropdown-item" %>
             <%= link_to "Call the prefecture", "#", class: "dropdown-item" %>
@@ -22,7 +22,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <%= image_tag "https://freeiconshop.com/wp-content/uploads/edd/trash-flat.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://image.flaticon.com/icons/png/512/4474/4474452.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Forum", "#", class: "dropdown-item" %>
             <%= link_to "Event", "#", class: "dropdown-item" %>
@@ -33,7 +33,6 @@
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
