@@ -9,9 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { getPosition } from '../components/getposition';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  getPosition();
 })
 
 
