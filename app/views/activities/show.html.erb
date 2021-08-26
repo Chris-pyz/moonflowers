@@ -16,7 +16,7 @@
 <div><h1>Collecte du jour </h1></div>
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
-<% if activity.waste %>
+<% if @activity.waste %>
 <p> <%= @activity.waste.quantity %></p>
 <p> <%= @activity.waste.material %></p>
 <% end %>
