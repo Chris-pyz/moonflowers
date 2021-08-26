@@ -1,0 +1,23 @@
+<h1>Modification de la collecte</h1>
+
+<div class="form-container">
+  <div class="form-activity-edit">
+  <div class=“form-activity-new”>
+    <%= simple_form_for (@activity) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class=“form-inputs”>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.simple_fields_for Waste.new do |waste| %>
+        <%= waste.input :material %>
+        <%= waste.input :quantity %>
+        <% end %>
+      </div>
+      <div class=“form-action”>
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,11 +1,34 @@
-<h1>Welcome to dashbord's <%= @user.nickname %></h1>
+<h1>Bienvenue <%= @user.nickname %></h1>
+
 
 <div class="show-user-card">
     <li> <%= @user.nickname %></li>
-    <li>self-description : <%= @user.self_description %></li>
+    <li>Description : <%= @user.self_description %></li>
     <%= link_to "home", root_path %>
-
-     <% if @user.avatar_photo.attached? %>
-      <%= cl_image_tag @user.avatar_photo.key, height: 80, width: 80, crop: :fill %>
      <% end %>
- </div>
+</div>
+
+<div class="card-show-user_activites">
+    <div class="activities-description"><p> description action</p></div>
+    <div class="user-activities-historic">
+      <p><u>Mes actions </u></p>
+
+      <% @user.activities.each do |activity| %>
+        <p> <%= activity.latitude %></p>
+        <p> <%= activity.longitude %></p>
+        <% if activity.waste %>
+            <p> <%= activity.waste.quantity %></p>
+            <p> <%= activity.waste.material %></p>
+          <% if activity.user == current_user %>
+              <%= link_to 'Modifier', edit_activity_path(activity) %>
+          <% end %>
+        <% end %>
+
+        <% if activity.user == current_user %>
+          <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
+        <% end %>
+<hr>
+      <% end %>
+
+    </div>
+</div>

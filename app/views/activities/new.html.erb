@@ -1,0 +1,26 @@
+<h1>S'aime ton activity </h1>
+
+<div class="form-container">
+
+<%# <h2 style=“background-image: url()” width:100%=“” heigth=“” 30px=“”>New action</h2> %>
+  <h2>Détails de la collecte</h2>
+  <div class=“form-action-new”>
+    <%= simple_form_for (@activity) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class=“form-inputs”>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.simple_fields_for Waste.new do |waste| %>
+        <%= waste.input :material %>
+        <%= waste.input :quantity %>
+        <% end %>
+      </div>
+      <div class=“form-action”>
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
