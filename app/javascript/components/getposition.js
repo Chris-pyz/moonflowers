@@ -4,7 +4,6 @@
 
 
 const getPosition = () => {
-const btn = document.querySelector(".btn-position");
 const latitude = document.querySelector("#activity_latitude");
 const longitude = document.querySelector("#activity_longitude");
 function showPosition(position) {
@@ -12,16 +11,14 @@ function showPosition(position) {
   longitude.value = position.coords.longitude;
 }
 
-if (btn) {
-  btn.addEventListener("click", event => {
-    console.log("salut");
-  navigator.geolocation.getCurrentPosition(showPosition);
-  })
-
-}
+window.addEventListener('load', (event) => {
+    navigator.geolocation.getCurrentPosition(showPosition) + `Load\n`;
+});
 
 
 
 }
+
+
 
 export {getPosition}

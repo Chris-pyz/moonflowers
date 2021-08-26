@@ -1,6 +1,6 @@
 <h1>S'aime ton activity </h1>
 
-        <button class="btn-position" onclick="getLocation()">Try It</button>
+
 
 
 <div class="form-container">
@@ -14,7 +14,6 @@
       <div class=“form-inputs”>
         <%= f.input :latitude, class:"latitude" %>
         <%= f.input :longitude, class:"longitude" %>
-        <p>Click the button to get your coordinates.</p>
         <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.simple_fields_for Waste.new do |waste| %>
         <%= waste.input :material %>
