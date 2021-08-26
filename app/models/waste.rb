@@ -1,5 +1,5 @@
 class Waste < ApplicationRecord
   belongs_to :activity
-  MATERIAL = %w[verre papier plastique métal divers].freeze
-  validates :material, inclusion: { in: MATERIAL }
+  MATERIALS = %w[verre papier plastique métal divers].freeze
+  validates :material, inclusion: { in: MATERIALS }
 end

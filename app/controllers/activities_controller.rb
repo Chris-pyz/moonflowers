@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
       }
     end
   end
-  
+
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
@@ -30,7 +30,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activities_params)
     @activity.user = current_user
     if @activity.save
-      @waste = Waste.new(wastes_params)
+      @waste = Waste.new
+      params[:activity][:waste][:material].delete_at(0)
+      @waste.material = params[:activity][:waste][:material]
+      raise
       @waste.activity = @activity
       @waste.save
       redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'

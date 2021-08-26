@@ -11,35 +11,60 @@
       <div class=“form-inputs”>
         <%= f.input :latitude %>
         <%= f.input :longitude %>
+
         <%= f.simple_fields_for Waste.new do |waste| %>
-          <%= waste.input :material %>
+          <%= waste.input :material,
+            as: :check_boxes,
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item',
+            collection: Waste::MATERIALS %>
+
           <%= waste.input :quantity %>
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample1"  aria-expanded="false" aria-controls="multiCollapseExample1">verre</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample2"  aria-expanded="false" aria-controls="multiCollapseExample2">papier</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">plastique</button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <input name="verre" type="number">
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        <input name="plastique" type="number">
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+      <div class="card card-body">
+        <input name="plastique" type="number">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
         <% end %>
+
+
+
+
       </div>
 
       <div class="form-actions">
         <%= f.button :submit %>
       </div>
     <% end %>
+
+
   </div>
-
-<fieldset class="form-group radio_buttons required snippet_material">
-  <legend class="col-form-label pt-0">Type <abbr title="required">*</abbr></legend>
-  <div class="category-wrapper">
-    <input type="hidden" name="snippet[category_id]" value="">
-    <div class="category-item">
-      <input class="form-check-input radio_buttons required category-selector" data-style="verre" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">verre</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="papier" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">papier</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="plastique" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">plastique</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="divers" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">divers</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="métal" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">métal</label>
-</fieldset>
-
-
 
 </div>
