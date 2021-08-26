@@ -13,10 +13,18 @@ class ActivitiesController < ApplicationController
       }
     end
   end
-  
+
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
+
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "shared/info_window", locals: { activity: @activity }),
+      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+
+    }]
   end
 
   # get /activities/new -new_action_path
