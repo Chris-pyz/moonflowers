@@ -12,15 +12,20 @@ margin-left: 10px;
 .far{
   color: red;
 }
-.far:visited{
-  animation: heartbeat 1s 0.1s;
+.heartbound {
+  //background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  //background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  //color:transparent;
+  //-webkit-background-clip: text;
+  //background-clip: text;
+  animation: heartbeat 1.5s 0.1s;
 }
 
 @keyframes heartbeat
 {
   0%
   {
-    transform: scale( .75 );
+    transform: scale( .6 );
   }
   20%
   {
@@ -28,7 +33,7 @@ margin-left: 10px;
   }
   40%
   {
-    transform: scale( .75 );
+    transform: scale( .8 );
   }
   60%
   {
@@ -36,10 +41,10 @@ margin-left: 10px;
   }
   80%
   {
-    transform: scale( .75 );
+    transform: scale( .6 );
   }
   100%
   {
-    transform: scale( .75 );
+    transform: scale( 1 );
   }
 }

@@ -15,8 +15,6 @@ class LikesController < ApplicationController
       @like.activity = @activity
       @like.save
       redirect_to @activity
-    else
-      "Déjà liké"
     end
   end
 end
