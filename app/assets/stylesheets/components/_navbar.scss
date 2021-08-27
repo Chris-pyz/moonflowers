@@ -39,14 +39,14 @@
 .navbar-nav {
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
+    margin-top: 22px;
     text-align: center;
     list-style: inside;
 }
 
 .navbar-nav li {
     margin-right: 60px;
-    margin-left: 20px;
+    margin-left: 13px;
     list-style: none;
 }
 
@@ -54,10 +54,6 @@
     display: block;
     position: fixed;
     left: 0;
-    top: 138px;
+    top: 150px;
     width: 100%;
-}
-
-.navbar-collapse {
-  margin: 10px 20px;
 }
