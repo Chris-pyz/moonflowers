@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
         lat: activity.latitude,
         lng: activity.longitude,
         info_window: render_to_string(partial: "shared/info_window", locals: { activity: activity }),
-        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+        image_url: helpers.asset_url('moon.png')
       }
     end
   end
@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window: render_to_string(partial: "shared/info_window", locals: { activity: @activity }),
-      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      image_url: helpers.asset_url('moon.png')
 
     }]
 
@@ -43,7 +43,7 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
-      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      image_url: helpers.asset_url('moon.png')
 
     }]
   end
@@ -95,7 +95,7 @@ class ActivitiesController < ApplicationController
         lat: @activity.latitude,
         lng: @activity.longitude,
         info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
-        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+        image_url: helpers.asset_url('moon.png')
       }]
 
     else
