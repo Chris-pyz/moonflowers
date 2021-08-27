@@ -19,44 +19,64 @@
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= f.input :latitude %>
+      <%= f.input :longitude %>
 
-      <div class=“form-inputs”>
-x
-        <%= f.input :latitude, class:"latitude" %>
-        <%= f.input :longitude, class:"longitude" %>
-        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-        <%= f.simple_fields_for Waste.new do |waste| %>
-          <%= waste.input :material %>
-          <%= waste.input :quantity %>
-        <% end %>
-      </div>
+
+          <%= f.simple_fields_for Waste.new do |waste| %>
+            <div class="form-waste">
+              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material01" aria-expanded="false" aria-controls="material01"><i class="fas fa-wine-bottle"></i></button><button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material02" aria-expanded="false" aria-controls="material02"><img width="16" height="16" src="https://image.flaticon.com/icons/png/512/3134/3134217.png" alt="boîte en carton Icône gratuit" title="boîte en carton Icône gratuit" class="loaded"></button><button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material03" aria-expanded="false" aria-controls="material03"><img width="16" height="16" src="https://image.flaticon.com/icons/png/512/2907/2907404.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded"></button><button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material04" aria-expanded="false" aria-controls="material04">métal</button><button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material05" aria-expanded="false" aria-controls="material04">divers</button>
+            </div>
+          <% end %>
+
+
+
+
+          <div class="d-flex justify-content-center">
+            <div class="col-waste">
+              <div class="collapse multi-collapse" id="material01">
+                <div class="card card-body card-waste">
+                  <input name="verre" type="number" class="input-waste">
+                </div>
+              </div>
+            </div>
+            <div class="col-waste">
+              <div class="collapse multi-collapse" id="material02">
+                <div class="card card-body card-waste">
+                  <input name="papier" type="number" class="input-waste">
+                </div>
+              </div>
+            </div>
+            <div class="col-waste">
+              <div class="collapse multi-collapse" id="material03">
+                <div class="card card-body card-waste">
+                  <input name="plastique" type="number" class="input-waste">
+                </div>
+              </div>
+            </div>
+            <div class="col-waste">
+              <div class="collapse multi-collapse" id="material04">
+                <div class="card card-body card-waste">
+                  <input name="metal" type="number" class="input-waste">
+                </div>
+              </div>
+            </div>
+            <div class="col-waste">
+              <div class="collapse multi-collapse" id="material05">
+                <div class="card card-body card-waste">
+                  <input name="divers" type="number" class="input-waste">
+                </div>
+              </div>
+            </div>
+          </div>
+
 
       <div class="form-actions">
         <%= f.button :submit %>
       </div>
     <% end %>
   </div>
-
-
-<fieldset class="form-group radio_buttons required snippet_material">
-  <legend class="col-form-label pt-0">Type <abbr title="required">*</abbr></legend>
-  <div class="category-wrapper">
-    <input type="hidden" name="snippet[category_id]" value="">
-    <div class="category-item">
-      <input class="form-check-input radio_buttons required category-selector" data-style="verre" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">verre</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="papier" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">papier</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="plastique" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">plastique</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="divers" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">divers</label>
-      <input class="form-check-input radio_buttons required category-selector" data-style="métal" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
-      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">métal</label>
-</fieldset>
-
-
 
 </div>
 
