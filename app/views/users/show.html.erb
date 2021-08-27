@@ -9,15 +9,6 @@
         <a>Description :<br><%= @user.self_description %></a>
     </div>
   </div>
-
-<h1>Bienvenue <%= @user.nickname %></h1>
-
-
-<div class="show-user-card">
-    <li> <%= @user.nickname %></li>
-    <li>Description : <%= @user.self_description %></li>
-    <%= link_to "home", root_path %>
-
 </div>
 
 <% @user.activities.each do |activity| %>
@@ -67,5 +58,6 @@
     </span>
     <span style="font-size: 1em; color: #97c95c; padding: 18px">
       <i class="fas fa-dot-circle"></i> papier
-    </span>  </div>
+    </span>
+  </div>
 </div>
