@@ -14,6 +14,8 @@ class Activity < ApplicationRecord
   end
   after_validation :reverse_geocode
 
+
+
   def waste
     wastes.first
   end

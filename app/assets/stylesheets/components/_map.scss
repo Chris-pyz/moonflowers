@@ -1,8 +1,10 @@
 .mapboxgl-popup {
   max-width: 200px;
+
 }
 
 .mapboxgl-popup-content {
+
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -14,4 +16,12 @@
 
 .map-address-activity {
   font-size: 8px;
+ }
+
+ .btnmap a {
+   text-decoration: none;
+ }
+
+ .btnmap a:hover {
+   color: green;
  }
