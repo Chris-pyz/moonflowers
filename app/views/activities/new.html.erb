@@ -1,26 +1,65 @@
-<h1>S'aime ton activity </h1>
+<br>
 
-<div class="form-container">
+<div class="card-trip">
 
-<%# <h2 style=“background-image: url()” width:100%=“” heigth=“” 30px=“”>New action</h2> %>
+<div class="form-div">
+
+
+
+
+
   <h2>Détails de la collecte</h2>
+        <div id="map-new-activity"
+        style="width: 50%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
   <div class=“form-action-new”>
+
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
       <div class=“form-inputs”>
-        <%= f.input :latitude %>
-        <%= f.input :longitude %>
+x
+        <%= f.input :latitude, class:"latitude" %>
+        <%= f.input :longitude, class:"longitude" %>
         <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
         <%= f.simple_fields_for Waste.new do |waste| %>
-        <%= waste.input :material %>
-        <%= waste.input :quantity %>
+          <%= waste.input :material %>
+          <%= waste.input :quantity %>
         <% end %>
       </div>
-      <div class=“form-action”>
+
+      <div class="form-actions">
         <%= f.button :submit %>
       </div>
     <% end %>
   </div>
+
+
+<fieldset class="form-group radio_buttons required snippet_material">
+  <legend class="col-form-label pt-0">Type <abbr title="required">*</abbr></legend>
+  <div class="category-wrapper">
+    <input type="hidden" name="snippet[category_id]" value="">
+    <div class="category-item">
+      <input class="form-check-input radio_buttons required category-selector" data-style="verre" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
+      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">verre</label>
+      <input class="form-check-input radio_buttons required category-selector" data-style="papier" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
+      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">papier</label>
+      <input class="form-check-input radio_buttons required category-selector" data-style="plastique" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
+      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">plastique</label>
+      <input class="form-check-input radio_buttons required category-selector" data-style="divers" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
+      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">divers</label>
+      <input class="form-check-input radio_buttons required category-selector" data-style="métal" type="radio" value="1" name="snippet[category_id]" id="snippet_category_id_1">
+      <label class="form-check-label collection_radio_buttons" for="snippet_category_id_1">métal</label>
+</fieldset>
+
+
+
+</div>
+
+</div>
 
 </div>
