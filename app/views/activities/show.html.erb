@@ -17,8 +17,10 @@
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
 <% if @activity.waste %>
-<p> <%= @activity.waste.quantity %></p>
-<p> <%= @activity.waste.material %></p>
+<% @activity.wastes.each do |waste| %>
+<p><%= waste.material %> : <%= waste.quantity %></p>
+<% end %>
+ <p> Total : <%= @total %></p>
 <% end %>
 
 <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>

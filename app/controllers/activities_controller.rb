@@ -17,6 +17,10 @@ class ActivitiesController < ApplicationController
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
+    @total = 0
+    @activity.wastes.each do |waste|
+      @total += waste.quantity
+    end
   end
 
   # get /activities/new -new_action_path
@@ -30,12 +34,41 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activities_params)
     @activity.user = current_user
     if @activity.save
-      @waste = Waste.new
-      params[:activity][:waste][:material].delete_at(0)
-      @waste.material = params[:activity][:waste][:material]
-      raise
-      @waste.activity = @activity
-      @waste.save
+      unless params[:verre] == ""
+        @waste = Waste.new
+        @waste.material = "Verre"
+        @waste.quantity = params[:verre].to_i
+        @waste.activity = @activity
+        @waste.save
+      end
+      unless params[:papier] == ""
+        @waste = Waste.new
+        @waste.material = "Papier"
+        @waste.quantity = params[:papier].to_i
+        @waste.activity = @activity
+        @waste.save
+      end
+      unless params[:plastique] == ""
+        @waste = Waste.new
+        @waste.material = "Plastique"
+        @waste.quantity = params[:plastique].to_i
+        @waste.activity = @activity
+        @waste.save
+      end
+      unless params[:metal] == ""
+        @waste = Waste.new
+        @waste.material = "Métal"
+        @waste.quantity = params[:metal].to_i
+        @waste.activity = @activity
+        @waste.save
+      end
+      unless params[:divers] == ""
+        @waste = Waste.new
+        @waste.material = "Divers"
+        @waste.quantity = params[:divers].to_i
+        @waste.activity = @activity
+        @waste.save
+      end
       redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'
     else
       render :new
