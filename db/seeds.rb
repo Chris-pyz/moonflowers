@@ -134,91 +134,91 @@ gaelle.avatar_photo.attach(io: file29, filename: 'gaelle.jpg', content_type: 'im
 
 # Activity
 a1 = Activity.create!(longitude: 5.371960639953613, latitude: 43.26214599609375, user: anna)
-w1 = Waste.create!(quantity: 2, material: 'glass', activity: a1)
+w1 = Waste.create!(quantity: 2, material: 'Verre', activity: a1)
 
 a2 = Activity.create!(longitude: 5.4047562, latitude: 43.313862, user: arnaud)
-w2 = Waste.create!(quantity: 8, material: 'plastic', activity: a2)
+w2 = Waste.create!(quantity: 8, material: 'Plastique', activity: a2)
 
 a3 = Activity.create!(longitude: 5.38107, latitude: 43.29695, user: chris)
-w3 = Waste.create!(quantity: 2, material: 'metal', activity: a3)
+w3 = Waste.create!(quantity: 2, material: 'Métal', activity: a3)
 
 a4 = Activity.create!(longitude: 5.383674621582031, latitude: 43.29341125488281, user: genevieve)
-w4 = Waste.create!(quantity: 3, material: 'glass', activity: a4)
+w4 = Waste.create!(quantity: 3, material: 'Verre', activity: a4)
 
 a5 = Activity.create!(longitude: 5.355508327484131, latitude: 43.290714263916016, user: kevin)
-w5 = Waste.create!(quantity: 1, material: 'plastic', activity: a5)
+w5 = Waste.create!(quantity: 1, material: 'Plastique', activity: a5)
 
 a6 = Activity.create!(longitude: 5.368098, latitude: 43.292790, user: rogerio)
-w6 = Waste.create!(quantity: 5, material: 'metal', activity: a6)
+w6 = Waste.create!(quantity: 5, material: 'Métal', activity: a6)
 
 a7 = Activity.create!(longitude: 5.375102, latitude: 43.293449, user: sacha)
-w7 = Waste.create!(quantity: 2, material: 'glass', activity: a7)
+w7 = Waste.create!(quantity: 2, material: 'Verre', activity: a7)
 
 a8 = Activity.create!(longitude: 5.369103, latitude: 43.296068, user: victor)
-w8 = Waste.create!(quantity: 4, material: 'plastic', activity: a8)
+w8 = Waste.create!(quantity: 4, material: 'Plastique', activity: a8)
 
 a9 = Activity.create!(longitude: 5.376034, latitude: 43.295941, user: mikael)
-w9 = Waste.create!(quantity: 7, material: 'metal', activity: a9)
+w9 = Waste.create!(quantity: 7, material: 'Métal', activity: a9)
 
 a10 = Activity.create!(longitude: 5.361888, latitude: 43.286470, user: issam)
-w10 = Waste.create!(quantity: 2, material: 'glass', activity: a10)
+w10 = Waste.create!(quantity: 2, material: 'Verre', activity: a10)
 
 a11 = Activity.create!(longitude: 5.381775, latitude: 43.294705, user: thais)
-w11 = Waste.create!(quantity: 4, material: 'plastic', activity: a11)
+w11 = Waste.create!(quantity: 4, material: 'Plastique', activity: a11)
 
 a12 = Activity.create!(longitude: 5.374277, latitude: 43.300962, user: augustin)
-w12 = Waste.create!(quantity: 2, material: 'metal', activity: a12)
+w12 = Waste.create!(quantity: 2, material: 'Métal', activity: a12)
 
 a13 = Activity.create!(longitude: 5.403868, latitude: 43.286118, user: adrien)
-w13 = Waste.create!(quantity: 3, material: 'glass', activity: a13)
+w13 = Waste.create!(quantity: 3, material: 'Verre', activity: a13)
 
 a14 = Activity.create!(longitude: 5.413765, latitude: 43.309037, user: jeanloup)
-w14 = Waste.create!(quantity: 7, material: 'plastic', activity: a14)
+w14 = Waste.create!(quantity: 7, material: 'Plastique', activity: a14)
 
 a15 = Activity.create!(longitude: 5.418958, latitude: 43.330268, user: pauline)
-w15 = Waste.create!(quantity: 1, material: 'metal', activity: a15)
+w15 = Waste.create!(quantity: 1, material: 'Métal', activity: a15)
 
 a16 = Activity.create!(longitude: 5.391835, latitude: 43.276489, user: clara)
-w16 = Waste.create!(quantity: 3, material: 'glass', activity: a16)
+w16 = Waste.create!(quantity: 3, material: 'Verre', activity: a16)
 
 a17 = Activity.create!(longitude: 5.396899, latitude: 43.265552, user: dorra)
-w17 = Waste.create!(quantity: 2, material: 'plastic', activity: a17)
+w17 = Waste.create!(quantity: 2, material: 'Plastique', activity: a17)
 
 a18 = Activity.create!(longitude: 5.383853, latitude: 43.272302, user: alice)
-w18 = Waste.create!(quantity: 5, material: 'metal', activity: a18)
+w18 = Waste.create!(quantity: 5, material: 'Métal', activity: a18)
 
 a19 = Activity.create!(longitude: 5.368146, latitude: 43.300043, user: florent)
-w19 = Waste.create!(quantity: 2, material: 'glass', activity: a19)
+w19 = Waste.create!(quantity: 2, material: 'Verre', activity: a19)
 
 a20 = Activity.create!(longitude: 5.353641, latitude: 43.286549, user: stephane)
-w20 = Waste.create!(quantity: 3, material: 'plastic', activity: a20)
+w20 = Waste.create!(quantity: 3, material: 'Plastique', activity: a20)
 
 a21 = Activity.create!(longitude: 5.383252, latitude: 43.302291, user: damien)
-w21 = Waste.create!(quantity: 1, material: 'plastic', activity: a21)
+w21 = Waste.create!(quantity: 1, material: 'Plastique', activity: a21)
 
 a22 = Activity.create!(longitude: 5.359391, latitude: 43.289173, user: fabrice)
-w22 = Waste.create!(quantity: 7, material: 'plastic', activity: a22)
+w22 = Waste.create!(quantity: 7, material: 'Plastique', activity: a22)
 
 a23 = Activity.create!(longitude: 5.372523, latitude: 43.242735, user: gaelle)
-w23 = Waste.create!(quantity: 2, material: 'plastic', activity: a23)
+w23 = Waste.create!(quantity: 2, material: 'Plastique', activity: a23)
 
 a24 = Activity.create!(longitude: 5.393724, latitude: 43.295483, user: frederic)
-w24 = Waste.create!(quantity: 4, material: 'plastic', activity: a24)
+w24 = Waste.create!(quantity: 4, material: 'Plastique', activity: a24)
 
 a25 = Activity.create!(longitude: 5.390548, latitude: 43.291047, user: virginie)
-w25 = Waste.create!(quantity: 3, material: 'plastic', activity: a25)
+w25 = Waste.create!(quantity: 3, material: 'Plastique', activity: a25)
 
 a26 = Activity.create!(longitude: 5.381114, latitude: 43.312581, user: djabirati)
-w26 = Waste.create!(quantity: 1, material: 'plastic', activity: a26)
+w26 = Waste.create!(quantity: 1, material: 'Plastique', activity: a26)
 
 a27 = Activity.create!(longitude: 5.368859, latitude: 43.316677, user: hugo)
-w27 = Waste.create!(quantity: 5, material: 'plastic', activity: a27)
+w27 = Waste.create!(quantity: 5, material: 'Plastique', activity: a27)
 
 a28 = Activity.create!(longitude: 5.392172, latitude: 43.337989, user: alain)
-w28 = Waste.create!(quantity: 6, material: 'plastic', activity: a28)
+w28 = Waste.create!(quantity: 6, material: 'Plastique', activity: a28)
 
 a29 = Activity.create!(longitude: 5.419216, latitude: 43.316060, user: naia)
-w29 = Waste.create!(quantity: 1, material: 'plastic', activity: a29)
+w29 = Waste.create!(quantity: 1, material: 'Plastique', activity: a29)
 
 a30 = Activity.create!(longitude: 5.417838, latitude: 43.263461, user: chris)
-w30 = Waste.create!(quantity: 3, material: 'plastic', activity: a30)
+w30 = Waste.create!(quantity: 3, material: 'Plastique', activity: a30)
