@@ -5,18 +5,27 @@
 <div class="form-div">
 
 
-<div class="form-container">
+
+
 
   <h2>Détails de la collecte</h2>
+        <div id="map-new-activity"
+        style="width: 50%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+  <div class=“form-action-new”>
 
-  <div class=“form-activities”>
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class=“form-inputs”>
-        <%= f.input :latitude %>
-        <%= f.input :longitude %>
+x
+        <%= f.input :latitude, class:"latitude" %>
+        <%= f.input :longitude, class:"longitude" %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
         <%= f.simple_fields_for Waste.new do |waste| %>
           <%= waste.input :material %>
           <%= waste.input :quantity %>
@@ -28,6 +37,7 @@
       </div>
     <% end %>
   </div>
+
 
 <fieldset class="form-group radio_buttons required snippet_material">
   <legend class="col-form-label pt-0">Type <abbr title="required">*</abbr></legend>

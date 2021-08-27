@@ -34,6 +34,7 @@
 <p> <%= @activity.waste.material %></p>
 <% end %>
 
+
 <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
 
@@ -43,7 +44,13 @@
 
 
 <div class="map-action-show">
-  <p> carte </p>
+
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
 </div>
 
 <div class="button-show-activiy">
