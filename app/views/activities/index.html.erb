@@ -1,13 +1,55 @@
-<h1>Bienvenue dans la Communauté Moonflower's </h1>
-<p> Actions:</p>
-<%= link_to 'Accueil', root_path, class: "btn-back-home-page" %>
+<div class="card-trip">
+  <div class="dash-content">
 
-<%= link_to "Profil", user_path(current_user) %>
+    <h3>Bienvenue dans la Communauté Moonflower's </h3>
 
-
-<div id="map"
+    <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>MoonFlower latest news</h2>
+      <p>see more...</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-trip">
+  <div class="dash-content">
+
+    <div class="donut" style="--first: .40; --second: .33; --third: .12; --fourth: .08; --fifth: 0.07">
+      <div class="donut__slice donut__slice__first"></div>
+      <div class="donut__slice donut__slice__second"></div>
+      <div class="donut__slice donut__slice__third"></div>
+      <div class="donut__slice donut__slice__fourth"></div>
+      <div class="donut__slice donut__slice__fifth"></div>
+      <div class="donut__label">
+        <div class="donut__label__heading">
+          Our community
+        </div>
+        <div class="donut__label__sub">
+          already picked up
+        </div>
+      </div>
+    </div>
+    <span style="font-size: 1em; color: #ff6838; padding: 18px">
+      <i class="fas fa-dot-circle"></i> plastique
+    </span>
+    <span style="font-size: 1em; color: #ffc820; padding: 18px">
+      <i class="fas fa-dot-circle"></i> metal
+    </span>
+    <span style="font-size: 1em; color: #97c95c; padding: 18px">
+      <i class="fas fa-dot-circle"></i> papier
+    </span>
+  </div>
+
 </div>
 

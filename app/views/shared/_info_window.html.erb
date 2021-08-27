@@ -1,2 +1,6 @@
-<h2 class="map-user-name"><%= activity.user.nickname %></h2>
+
+
+<%= link_to activity_path(activity.id) do %>
+  <h2 class="map-user-name"><%= activity.user.nickname %></h2>
+<% end %>
 <p class="map-address-activity"><%= activity.address%></p>

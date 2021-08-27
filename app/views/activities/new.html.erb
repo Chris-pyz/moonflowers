@@ -1,9 +1,21 @@
+<br>
 
-<div class="form-container">
+<div class="card-trip">
+
+<div class="form-div">
+
+
+
+
 
   <h2>Détails de la collecte</h2>
+        <div id="map-new-activity"
+        style="width: 50%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+  <div class=“form-action-new”>
 
-  <div class=“form-activities”>
     <%= simple_form_for (@activity) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -65,4 +77,9 @@
       </div>
     <% end %>
   </div>
+
+</div>
+
+</div>
+
 </div>

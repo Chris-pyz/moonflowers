@@ -17,22 +17,42 @@ class ActivitiesController < ApplicationController
   # get /activities/:id -action_path
   def show
     @activity = Activity.find(params[:id])
+
     @total = 0
     @activity.wastes.each do |waste|
       @total += waste.quantity
     end
+
+
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "shared/info_window", locals: { activity: @activity }),
+      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+
+    }]
+
   end
 
   # get /activities/new -new_action_path
   def new
     @activity = Activity.new
     @activity.wastes.build
+
+    @markers = [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
+      image_url: helpers.asset_url('noun_Lotus_2517111.png')
+
+    }]
   end
 
   # post /activities -action_path
   def create
     @activity = Activity.new(activities_params)
     @activity.user = current_user
+
     if @activity.save
       unless params[:verre] == ""
         @waste = Waste.new
@@ -70,6 +90,14 @@ class ActivitiesController < ApplicationController
         @waste.save
       end
       redirect_to @activity, notice: 'Votre action a été correctement ajoutée.'
+
+      @markers = [{
+        lat: @activity.latitude,
+        lng: @activity.longitude,
+        info_window: render_to_string(partial: "shared/info_window_new_act", locals: { activity: @activity }),
+        image_url: helpers.asset_url('noun_Lotus_2517111.png')
+      }]
+
     else
       render :new
     end

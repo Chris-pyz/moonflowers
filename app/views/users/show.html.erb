@@ -1,33 +1,63 @@
-<h1>Bienvenue <%= @user.nickname %></h1>
 
-
-<div class="show-user-card">
-    <li> <%= @user.nickname %></li>
-    <li>Description : <%= @user.self_description %></li>
-    <%= link_to "home", root_path %>
+<div class="card-trip">
+  <div class="dash-content">
+    <div class="pic-dash">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    </div>
+    <h4>Bienvenue <%= @user.nickname %></h4>
+    <div class="show-user-card">
+        <a>Description :<br><%= @user.self_description %></a>
+    </div>
+  </div>
 </div>
 
-<div class="card-show-user_activites">
-    <div class="activities-description"><p> description action</p></div>
-    <div class="user-activities-historic">
-      <p><u>Mes actions </u></p>
-
-      <% @user.activities.each do |activity| %>
-        <p> <%= activity.latitude %></p>
-        <p> <%= activity.longitude %></p>
-        <% if activity.waste %>
-            <p> <%= activity.waste.quantity %></p>
-            <p> <%= activity.waste.material %></p>
-          <% if activity.user == current_user %>
-              <%= link_to 'Modifier', edit_activity_path(activity) %>
-          <% end %>
+<% @user.activities.each do |activity| %>
+<div class="card-trip">
+  <div class="dash-content">
+    <p> <%= activity.latitude %></p>
+    <p> <%= activity.longitude %></p>
+    <% if activity.waste %>
+    <p>You picked up <%= activity.waste.quantity %> <%= activity.waste.material %> rubbish ! Congratulation.</p>
+      <% if activity.user == current_user %>
+        <%= link_to edit_activity_path(activity) do %>
+          <i class="fas fa-pencil-alt fa-sm"></i>
         <% end %>
-
-        <% if activity.user == current_user %>
-          <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
-        <% end %>
-<hr>
       <% end %>
+    <% end %>
+    <% if activity.user == current_user %>
+      <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
+        <i class="far fa-trash-alt fa-sm"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<% end %>
 
+<div class="card-trip">
+  <div class="dash-content">
+    <div class="donut" style="--first: .40; --second: .33; --third: .12; --fourth: .08; --fifth: 0.07">
+      <div class="donut__slice donut__slice__first"></div>
+      <div class="donut__slice donut__slice__second"></div>
+      <div class="donut__slice donut__slice__third"></div>
+      <div class="donut__slice donut__slice__fourth"></div>
+      <div class="donut__slice donut__slice__fifth"></div>
+      <div class="donut__label">
+        <div class="donut__label__heading">
+          Your Rubbish
+        </div>
+        <div class="donut__label__sub">
+          good job !
+        </div>
+      </div>
     </div>
+    <span style="font-size: 1em; color: #ff6838; padding: 18px">
+      <i class="fas fa-dot-circle"></i> plastique
+    </span>
+    <span style="font-size: 1em; color: #ffc820; padding: 18px">
+      <i class="fas fa-dot-circle"></i> metal
+    </span>
+    <span style="font-size: 1em; color: #97c95c; padding: 18px">
+      <i class="fas fa-dot-circle"></i> papier
+    </span>
+  </div>
 </div>
