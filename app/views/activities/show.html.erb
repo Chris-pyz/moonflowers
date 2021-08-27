@@ -13,12 +13,10 @@
 </div>
 <br>
 
+<div><h1>Collecte du jour </h1></div>
 
-
-<div><h3>Collecte du jour </h3></div>
 <p> <%= @activity.latitude %></p>
 <p> <%= @activity.longitude %></p>
-
 
 <% if @activity.waste %>
 <% @activity.wastes.each do |waste| %>
@@ -26,9 +24,6 @@
 <% end %>
  <p> Total : <%= @total %></p>
 <% end %>
-
-
-
 
 <%= link_to edit_activity_path(@activity) do %>
   <i class="fas fa-pencil-alt fa-sm"></i>
@@ -40,10 +35,19 @@
 <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
 
+ <div class="like">
+        <div class="heart">
+          <%= link_to activity_likes_path(@activity), method: :create do %>
+          <i class="far fa-heart" ></i>
+          <% end %>
+        </div>
 
+        <div class="like-count">
+          <%= @activity.likes.count  %>
+        </div>
+  </div>
 
 <div><br><h3>Carte des moonflowers</h3></div>
-
 
 <div class="map-action-show">
 
@@ -55,9 +59,9 @@
 
 </div>
 
-<div class="button-show-activiy">
-    <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
-</div>
+  <div class="button-show-activiy">
+      <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
+  </div>
 
 </div>
 

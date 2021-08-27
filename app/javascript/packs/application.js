@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 import { initMapbox } from '../plugins/init_mapbox';
 import { getPosition } from '../components/getposition';
 
@@ -16,14 +17,12 @@ document.addEventListener('turbolinks:load', () => {
   getPosition();
 })
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -36,8 +35,9 @@ import { showActivityMap } from '../components/showactivitymap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import { initMapbox } from '../plugins/init_mapbox';
+import { likeHeart } from '../components/like';
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
+  initMapbox();
+  likeHeart();
+})

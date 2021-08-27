@@ -1,4 +1,3 @@
-
 <div class="card-trip">
   <div class="dash-content">
     <div class="pic-dash">
@@ -11,13 +10,20 @@
   </div>
 </div>
 
+<div class="card-show-user_activites">
+    <div class="user-activities-historic">
+      <p><u>Mes actions </u></p>
+</div>
+</div>
+
 <% @user.activities.each do |activity| %>
 <div class="card-trip">
   <div class="dash-content">
     <p> <%= activity.latitude %></p>
     <p> <%= activity.longitude %></p>
-    <% if activity.waste %>
-    <p>You picked up <%= activity.waste.quantity %> <%= activity.waste.material %> rubbish ! Congratulation.</p>
+     <% if activity.waste %>
+            <p> <%= activity.waste.quantity %></p>
+            <p> <%= activity.waste.material %></p>
       <% if activity.user == current_user %>
         <%= link_to edit_activity_path(activity) do %>
           <i class="fas fa-pencil-alt fa-sm"></i>
@@ -32,6 +38,18 @@
   </div>
 </div>
 <% end %>
+      
+      <div class="like">
+          <div class="heart">
+           <%= link_to activity_likes_path(activity), method: :create do %>
+            <i class="far fa-heart" ></i>
+            <% end %>
+          </div>
+
+          <div class="like-count">
+            <%= activity.likes.count  %>
+          </div>
+        </div>
 
 <div class="card-trip">
   <div class="dash-content">

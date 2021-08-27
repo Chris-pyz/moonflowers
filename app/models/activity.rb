@@ -1,6 +1,9 @@
 class Activity < ApplicationRecord
   belongs_to :user
+  has_many :likes
+  has_many :wastes
   has_many :wastes, dependent: :destroy
+
 
   accepts_nested_attributes_for :wastes
 
