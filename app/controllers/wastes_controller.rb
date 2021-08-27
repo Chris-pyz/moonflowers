@@ -9,7 +9,6 @@ class WastesController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @waste = Waste.new(waste_params)
     @waste.activity = @activity
-
     if @waste.save
       redirect_to activity_path(), notice: ""
     else

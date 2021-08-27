@@ -20,6 +20,14 @@
 <p> <%= @activity.longitude %></p>
 
 
+<% if @activity.waste %>
+<% @activity.wastes.each do |waste| %>
+<p><%= waste.material %> : <%= waste.quantity %></p>
+<% end %>
+ <p> Total : <%= @total %></p>
+<% end %>
+
+
 
 
 <%= link_to edit_activity_path(@activity) do %>
@@ -28,12 +36,6 @@
 <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
   <i class="far fa-trash-alt fa-sm"></i>
 <% end %>
-
-<% if @activity.waste %>
-<p> <%= @activity.waste.quantity %></p>
-<p> <%= @activity.waste.material %></p>
-<% end %>
-
 
 <p><%= link_to 'Modifier', edit_activity_path(@activity) %></p>
 <%= link_to 'Supprimer', activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } %></p>
