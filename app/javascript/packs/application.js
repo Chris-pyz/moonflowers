@@ -15,6 +15,7 @@ import { getPosition } from '../components/getposition';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   getPosition();
+  likeHeart();
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -35,9 +36,5 @@ import { showActivityMap } from '../components/showactivitymap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initMapbox } from '../plugins/init_mapbox';
+
 import { likeHeart } from '../components/like';
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-  likeHeart();
-})
