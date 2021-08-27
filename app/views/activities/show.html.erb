@@ -35,11 +35,17 @@
   <div class="button-show-activiy">
       <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
   </div>
-  <div>
-  <%= link_to activity_likes_path(@activity), method: :create do %>
-   <div><i class="far fa-thumbs-up" ></i></div>
-  <% end %>
-  <%= @activity.likes.count  %>
+
+  <div class="like">
+        <div class="heart">
+          <%= link_to activity_likes_path(@activity), method: :create do %>
+          <i class="far fa-heart" ></i>
+          <% end %>
+        </div>
+
+        <div class="like-count">
+          <%= @activity.likes.count  %>
+        </div>
   </div>
 
 </div>

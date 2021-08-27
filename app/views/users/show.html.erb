@@ -8,7 +8,7 @@
 </div>
 
 <div class="card-show-user_activites">
-    <div class="activities-description"><p> description action</p></div>
+        <div class="activities-description"><p> description action</p></div>
     <div class="user-activities-historic">
       <p><u>Mes actions </u></p>
 
@@ -23,10 +23,23 @@
           <% end %>
         <% end %>
 
-        <% if activity.user == current_user %>
+      <% if activity.user == current_user %>
           <%= link_to 'Supprimer', activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } %>
         <% end %>
-<hr>
+
+        <div class="like">
+          <div class="heart">
+           <%= link_to activity_likes_path(activity), method: :create do %>
+            <i class="far fa-heart" ></i>
+            <% end %>
+          </div>
+
+          <div class="like-count">
+            <%= activity.likes.count  %>
+          </div>
+        </div>
+
+      <hr>
       <% end %>
 
     </div>

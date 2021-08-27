@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     # creation de l'instance like
     @activity = Activity.find(params[:activity_id])
 
-    if (@activity.likes.select { |l| l.user == current_user }).count.zero?
+    if (@activity.likes.select { |like| like.user == current_user }).count.zero?
 
       @like = Like.new
       # assignation de @activity avec l'action du user actuel
