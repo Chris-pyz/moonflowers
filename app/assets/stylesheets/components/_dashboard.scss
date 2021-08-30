@@ -1,3 +1,4 @@
+
 .dash-content {
   padding: 12px;
 }
@@ -174,4 +175,8 @@
   border-left-color: rgba(22, 133, 184, calc(100 * (var(--fifth) - .75)));
   -webkit-transform: rotate(calc(360deg * var(--fifth-start) + 45deg + var(--donut-spacing-deg)));
           transform: rotate(calc(360deg * var(--fifth-start) + 45deg + var(--donut-spacing-deg)));
+}
+
+.show-user-card {
+  font-size: 16px;
 }
