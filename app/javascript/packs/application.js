@@ -11,6 +11,7 @@ require("channels")
 import { initMapbox } from '../plugins/init_mapbox';
 import { getPosition } from '../components/getposition';
 
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   getPosition();
@@ -32,7 +33,6 @@ document.addEventListener('turbolinks:load', () => {
 
 // External imports
 import "bootstrap";
-import { showActivityMap } from '../components/showactivitymap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
