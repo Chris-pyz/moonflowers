@@ -18,7 +18,11 @@
   font-size: 8px;
  }
 
-#new_activity {
+.activity_latitude {
+  visibility: hidden;
+}
+
+.activity_longitude {
   visibility: hidden;
 }
 
