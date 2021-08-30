@@ -16,7 +16,6 @@ import { likeHeart } from '../components/like';
 //  getPosition();                            JAI COMMNTÉ CETTE LIGNE
 // })                                   JAI COMMNTÉ CETTE LIGNE
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -32,7 +31,6 @@ import { likeHeart } from '../components/like';
 
 // External imports
 import "bootstrap";
-import { showActivityMap } from '../components/showactivitymap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

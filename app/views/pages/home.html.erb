@@ -1,6 +1,38 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg);">
+  <div class="container">
+
+    <h1><strong>Bienvenur sur Moonflower's</strong>!</h1>
+    <% if user_signed_in? %>
+      <p>Hello <%=current_user.name%>,</p>
+    <% end %>
+    <p>Change your life by renting a spaceship to travel the universe.</p>
+
+      <div class="search-bar">
+
+          <form action="spaceships#index" method="get" class="form-index-spaceships">
+
+            <div class="search-form"><input class="" name="address" type="text" placeholder="Address"></div>
+            <div class="search-form"><input class="" name="capacity" type="text" placeholder="Number of people"></div>
+
+            <div class="search-form"><strong>From: </strong> <input class="datepicker" name="starts_at" required="false" ></div>
+            <div class="search-form"><strong>To: </strong>  <input class="datepicker" name="ends_at" required="false" ></div>
+
+            <div class="search-button"><button name="button" type="submit" class="btn-genevieve">Search</button></div>
+
+          </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <div class="card-trip">
   <div class="card-trip-infos">
-      <h2>Would you like to take Action ?</h2>
+      <h2>S'aime ton action</h2>
       <%= link_to new_activity_path do %>
         <span style="font-size: 2em; color: green; padding: 18px">
           <i class="fas fa-recycle"></i>
@@ -13,7 +45,7 @@
   <img src="https://image.freepik.com/free-vector/cleaning-city-service-illustration-cartoon-flat-worker-cleaner-people-uniform-working-with-equipment-clean-city-urban-street_169479-789.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2>MoonFlowers community</h2>
+      <h2></h2>
       <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
     </div>
   </div>
@@ -23,8 +55,8 @@
   <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2>MoonFlower latest news</h2>
-      <p>see more...</p>
+      <h2></h2>
+      <p></p>
     </div>
   </div>
 </div>
@@ -39,4 +71,3 @@
     </div>
   </div>
 </div>
-
