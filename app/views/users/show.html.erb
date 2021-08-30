@@ -19,7 +19,7 @@
     <!--<p> <%= activity.latitude %></p>-->
     <!--<p> <%= activity.longitude %></p>-->
     <% if activity.waste %>
-    <%= activity.created_at.to_time.strftime('%B %e à %l:%M %p') %>
+    <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
     <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
     <p> <%= activity.address %></p>
     <p>Felicitation ! 💪</p>
