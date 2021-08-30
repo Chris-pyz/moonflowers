@@ -1,4 +1,5 @@
 
+
 <div class="card-trip">
   <div class="dash-content">
     <div class="pic-dash">
@@ -18,8 +19,7 @@
     <!--<p> <%= activity.latitude %></p>-->
     <!--<p> <%= activity.longitude %></p>-->
     <% if activity.waste %>
-    <%= Time.now.strftime("%d/%m/%Y") %>
-    <%= Time.now.strftime("à %H:%M ")%>
+    <%= activity.created_at.to_time.strftime('%B %e à %l:%M %p') %>
     <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
     <p> <%= activity.address %></p>
     <p>Felicitation ! 💪</p>
