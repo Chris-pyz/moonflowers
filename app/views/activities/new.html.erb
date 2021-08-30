@@ -13,8 +13,10 @@
         <%= simple_form_for (@activity) do |f| %>
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <% f.input :latitude %>
-          <% f.input :longitude %>
+        <div class ="hidden input">
+          <%= f.input :latitude %>
+          <%= f.input :longitude %>
+        </div>
 
         <%= f.simple_fields_for Waste.new do |waste| %>
           <div class="form-waste">
