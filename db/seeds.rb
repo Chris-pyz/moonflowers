@@ -111,11 +111,11 @@ file24 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t1.18169-9/994472_10
 alice = User.create(name: 'Alice', nickname: 'Alilyce', email: 'alice@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, les iles et la plongée sous-marine")
 alice.avatar_photo.attach(io: file24, filename: 'alice.jpg', content_type: 'image/jpg')
 
-file25 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t31.18172-8/1405004_10202392290514464_1787383006_o.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=X8tvLpKZFd0AX8RC2md&tn=2PLKdSnrFr2eKJE8&_nc_ht=scontent.fcdg3-1.fna&oh=259f3288cf068d36f197b7b760280cd2&oe=614CAE11")
+file25 = URI.open("https://scontent.fcdg2-1.fna.fbcdn.net/v/t1.18169-9/1045090_429431803828130_1414349598_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=FguswAC4mzgAX8ulNQ_&_nc_ht=scontent.fcdg2-1.fna&oh=6b976d75abb8df8082cc75c576a637a2&oe=6152BB48")
 frederic = User.create(name: 'Frederic', nickname: 'Fred', email: 'frederic@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, les randonnées et la plongée sous-marine")
 frederic.avatar_photo.attach(io: file25, filename: 'fred.jpg', content_type: 'image/jpg')
 
-file26 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t39.30808-6/238619399_10159240648398608_9056120649267015433_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=7dNMPA25XvYAX99E3lO&tn=2PLKdSnrFr2eKJE8&_nc_ht=scontent.fcdg3-1.fna&oh=af4a4e5a5fc2ffb19fac8db0014a31da&oe=612BCEA5")
+file26 = URI.open("https://avatars.githubusercontent.com/u/26381053?v=4")
 virginie = User.create(name: 'Virginie', nickname: 'Virgi', email: 'virginie@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, le yoga et la cuisine")
 virginie.avatar_photo.attach(io: file26, filename: 'virginie.jpg', content_type: 'image/jpg')
 
@@ -123,11 +123,11 @@ file27 = URI.open("https://www.facebook.com/photo.php?fbid=10154036956449680&set
 naia = User.create(name: 'Naia', nickname: 'Nayouta', email: 'naia@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, la danse et le surf")
 naia.avatar_photo.attach(io: file27, filename: 'naia.jpg', content_type: 'image/jpg')
 
-file28 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t1.6435-9/120573342_10157960492224263_1414604566125718083_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=1N87S12H5VAAX_JFQPx&_nc_ht=scontent.fcdg3-1.fna&oh=549100da3a39cbebe42151df9f881b0b&oe=614AF887")
+file28 = URI.open("https://avatars.githubusercontent.com/u/67097382?v=4")
 fabrice = User.create(name: 'Fabrice', nickname: 'Fafa', email: 'fabrice@lewagon.com', password:'123456', city: 'Marseille', self_description: "J'aime la nature, les voyages et la moto ")
 fabrice.avatar_photo.attach(io: file28, filename: 'fabrice.jpg', content_type: 'image/jpg')
 
-file29 = URI.open("https://www.facebook.com/photo/?fbid=10159516509749824&set=a.432216774823")
+file29 = URI.open("https://scontent.fcdg2-1.fna.fbcdn.net/v/t1.6435-9/38717299_10156657966694680_543426664181268480_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=2VsV2WPFe20AX_uFN-O&_nc_oc=AQkK3zNgEJGIHKi3BbXGZdQT_sjuMof_yuCW39mqBuRT859YsBL0yj4Fjg1xap6lVOQ&_nc_ht=scontent.fcdg2-1.fna&oh=cf232b6af386b3b5b92e7b3f9a70c3b0&oe=61505854")
 gaelle = User.create(name: 'Gaelle', nickname: 'Guagua', email: 'gaelle@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, la cuisine et les voyages")
 gaelle.avatar_photo.attach(io: file29, filename: 'gaelle.jpg', content_type: 'image/jpg')
 
