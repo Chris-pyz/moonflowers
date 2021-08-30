@@ -123,7 +123,7 @@ file27 = URI.open("https://www.facebook.com/photo.php?fbid=10154036956449680&set
 naia = User.create(name: 'Naia', nickname: 'Nayouta', email: 'naia@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, la danse et le surf")
 naia.avatar_photo.attach(io: file27, filename: 'naia.jpg', content_type: 'image/jpg')
 
-file28 = URI.open("https://scontent.fcdg2-1.fna.fbcdn.net/v/t31.18172-8/192873_2040698740592_2297659_o.jpg?_nc_[…]1.fna&oh=e18fae3ce2cef2a49f28ee7729408ed1&oe=6151F6B3")
+file28 = URI.open("https://avatars.githubusercontent.com/u/67097382?v=4")
 fabrice = User.create(name: 'Fabrice', nickname: 'Fafa', email: 'fabrice@lewagon.com', password:'123456', city: 'Marseille', self_description: "J'aime la nature, les voyages et la moto ")
 fabrice.avatar_photo.attach(io: file28, filename: 'fabrice.jpg', content_type: 'image/jpg')
 
