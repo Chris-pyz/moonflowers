@@ -115,9 +115,9 @@ file25 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t31.18172-8/1405004_
 frederic = User.create(name: 'Frederic', nickname: 'Fred', email: 'frederic@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, les randonnées et la plongée sous-marine")
 frederic.avatar_photo.attach(io: file25, filename: 'fred.jpg', content_type: 'image/jpg')
 
-# file26 = URI.open("https://scontent.fcdg3-1.fna.fbcdn.net/v/t39.30808-6/238619399_10159240648398608_9056120649267015433_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=7dNMPA25XvYAX99E3lO&tn=2PLKdSnrFr2eKJE8&_nc_ht=scontent.fcdg3-1.fna&oh=af4a4e5a5fc2ffb19fac8db0014a31da&oe=612BCEA5")
-# virginie = User.create(name: 'Virginie', nickname: 'Virgi', email: 'virginie@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, le yoga et la cuisine")
-# virginie.avatar_photo.attach(io: file26, filename: 'virginie.jpg', content_type: 'image/jpg')
+file26 = URI.open("https://avatars.githubusercontent.com/u/26381053?v=4")
+virginie = User.create(name: 'Virginie', nickname: 'Virgi', email: 'virginie@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, le yoga et la cuisine")
+virginie.avatar_photo.attach(io: file26, filename: 'virginie.jpg', content_type: 'image/jpg')
 
 file27 = URI.open("https://www.facebook.com/photo.php?fbid=10154036956449680&set=pb.728139679.-2207520000..&type=3")
 naia = User.create(name: 'Naia', nickname: 'Nayouta', email: 'naia@lewagon.com', password: '123456', city: 'Marseille', self_description: "J'aime la nature, la danse et le surf")
@@ -205,8 +205,8 @@ w23 = Waste.create!(quantity: 2, material: 'Plastique', activity: a23)
 a24 = Activity.create!(longitude: 5.393724, latitude: 43.295483, user: frederic)
 w24 = Waste.create!(quantity: 4, material: 'Plastique', activity: a24)
 
-# a25 = Activity.create!(longitude: 5.390548, latitude: 43.291047, user: virginie)
-# w25 = Waste.create!(quantity: 3, material: 'Plastique', activity: a25)
+a25 = Activity.create!(longitude: 5.390548, latitude: 43.291047, user: virginie)
+w25 = Waste.create!(quantity: 3, material: 'Plastique', activity: a25)
 
 a26 = Activity.create!(longitude: 5.381114, latitude: 43.312581, user: djabirati)
 w26 = Waste.create!(quantity: 1, material: 'Plastique', activity: a26)
