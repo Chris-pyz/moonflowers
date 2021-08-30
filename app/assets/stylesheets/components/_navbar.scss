@@ -45,8 +45,8 @@
 }
 
 .navbar-nav li {
-    margin-right: 30px;
-    margin-left: 16px;
+    margin-right: 60px;
+    margin-left: 20px;
     list-style: none;
 }
 
@@ -54,11 +54,10 @@
     display: block;
     position: fixed;
     left: 0;
-    top: 152px;
+    top: 138px;
     width: 100%;
 }
 
 .navbar-collapse {
-  margin-top: 10px;
-  margin-left: 20px;
+  margin: 10px 20px;
 }
