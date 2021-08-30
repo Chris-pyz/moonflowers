@@ -21,7 +21,8 @@
 
 h2 {
   padding-top: 16px;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
   display: flex;
@@ -35,15 +36,22 @@ h2 {
   margin: 0 auto;
   margin-top: 20px;
   text-align: center;
-  border: 1px solid;
+  border: 2px solid rgb(53, 199, 53);
   text-decoration: none;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.form-actions:hover {
+  text-decoration: none;
+  background-color: none;
+  color: black;
+  font-weight: bold;
 }
 
 .form-waste {
   display: flex;
   justify-content: center;
-
 }
 
 .btn-waste {
@@ -53,24 +61,24 @@ h2 {
   color: black;
   padding: 8px 24px;
   font-size: 10px;
+  font-weight: bold;
   transition: background 0.3s ease;
   border-radius: 15px;
   background-color: white;
   width: 60px;
   height: 40px;
   margin: 15px 5px 5px;
-
-
-  i {
-    color: black;
-  }
-
-
 }
 
 .card-waste {
-  width: 60px;
+  margin-top: 10px;
   padding: 0;
+  border-radius: 15px;
+  width: 39px;
+  height: 39px;
+  border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .col-waste {
@@ -78,26 +86,36 @@ h2 {
   flex-grow: 1;
   max-width: 60px;
   flex: 1 0 0%;
-  margin: 2px;
+  margin: 5px;
+  padding: 10px;
 }
 
 .btn-waste:hover {
   text-decoration: none;
   background-color: none;
   color: black;
-
+  font-weight: bold;
 }
 
 .input-waste {
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto;
   border: none;
-  background-color: cadetblue;
-  color: white;
+  background-color: #D5EEBB;
+  color: black;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
   &:focus-visible {
     outline: none;
   }
+
+}
+
+.inputs-waste {
+  display: flex;
 }
 
 /* Chrome, Safari, Edge, Opera */

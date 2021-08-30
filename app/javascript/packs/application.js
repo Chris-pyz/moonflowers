@@ -10,13 +10,11 @@ require("channels")
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { getPosition } from '../components/getposition';
-
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-  getPosition();
-})
-
+import { likeHeart } from '../components/like';
+// document.addEventListener('turbolinks:load', () => { JAI COMMNTÉ CETTE LIGNE
+//  initMapbox();                                        JAI COMMNTÉ CETTE LIGNE
+//  getPosition();                            JAI COMMNTÉ CETTE LIGNE
+// })                                   JAI COMMNTÉ CETTE LIGNE
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -37,7 +35,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
+// document.addEventListener('turbolinks:load', () => { JAI COMMNTÉ CETTE LIGNE
   // Call your functions here, e.g:
   // initSelect2();
-});
+// });                                                JAI COMMNTÉ CETTE LIGNE
+
+// JAI AJOUTÉ CES LIGNES
+ document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  getPosition();
+  likeHeart();
+})

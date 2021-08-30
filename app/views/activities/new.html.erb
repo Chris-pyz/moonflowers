@@ -1,94 +1,85 @@
 
 <div class="card-trip">
 
-<div class="form-div">
+  <div class="form-div">
+    <h2>Détails de la collecte</h2>
 
-  <h2>Détails de la collecte</h2>
-        <div id="map-new-activity"
+      <div id="map-new-activity"
         style="width: 100%; height: 280px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class=“form-action-new”>
+        <%= simple_form_for (@activity) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class ="hidden input">
+          <%= f.input :latitude %>
+          <%= f.input :longitude %>
         </div>
-  <div class=“form-action-new”>
 
-    <%= simple_form_for (@activity) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :latitude %>
-      <%= f.input :longitude %>
+        <%= f.simple_fields_for Waste.new do |waste| %>
+          <div class="form-waste">
+            <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material01" aria-expanded="false" aria-controls="material01">
+              <img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="boîte en carton Icône gratuit" title="boîte en carton Icône gratuit" class="loaded">
+            </button>
+            <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material02" aria-expanded="false" aria-controls="material02">
+              <img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="boîte en carton Icône gratuit" title="boîte en carton Icône gratuit" class="loaded">
+            </button>
+            <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material03" aria-expanded="false" aria-controls="material03">
+              <img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
+            </button>
+            <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material04" aria-expanded="false" aria-controls="material04">
+              <img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
+            </button>
+            <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material05" aria-expanded="false" aria-controls="material04">
+              <img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
+            </button>
+          </div>
+        <% end %>
 
-
-
-          <%= f.simple_fields_for Waste.new do |waste| %>
-            <div class="form-waste">
-              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material01" aria-expanded="false" aria-controls="material01">
-                <img width="42" height="42" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="boîte en carton Icône gratuit" title="boîte en carton Icône gratuit" class="loaded">
-              </button>
-              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material02" aria-expanded="false" aria-controls="material02">
-                <img width="42" height="42" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="boîte en carton Icône gratuit" title="boîte en carton Icône gratuit" class="loaded">
-              </button>
-              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material03" aria-expanded="false" aria-controls="material03">
-                <img width="42" height="42" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
-              </button>
-              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material04" aria-expanded="false" aria-controls="material04">
-                <img width="42" height="42" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
-              </button>
-              <button class="btn btn-primary btn-waste" type="button" data-toggle="collapse" data-target="#material05" aria-expanded="false" aria-controls="material04">
-                <img width="42" height="42" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="Plastic bottle free icon" title="Plastic bottle free icon" class="loaded">
-              </button>
-            </div>
-          <% end %>
-
-
-
-
-          <div class="d-flex justify-content-center">
+          <div class="inputs-waste">
             <div class="col-waste">
               <div class="collapse multi-collapse" id="material01">
                 <div class="card card-body card-waste">
-                  <input name="verre" type="number" class="input-waste">
+                  <input name="verre" type="number" class="input-waste" placeholder="0">
                 </div>
               </div>
             </div>
             <div class="col-waste">
               <div class="collapse multi-collapse" id="material02">
                 <div class="card card-body card-waste">
-                  <input name="papier" type="number" class="input-waste">
+                  <input name="papier" type="number" class="input-waste" placeholder="0">
                 </div>
               </div>
             </div>
             <div class="col-waste">
               <div class="collapse multi-collapse" id="material03">
                 <div class="card card-body card-waste">
-                  <input name="plastique" type="number" class="input-waste">
+                  <input name="plastique" type="number" class="input-waste" placeholder="0">
                 </div>
               </div>
             </div>
             <div class="col-waste">
               <div class="collapse multi-collapse" id="material04">
                 <div class="card card-body card-waste">
-                  <input name="metal" type="number" class="input-waste">
+                  <input name="metal" type="number" class="input-waste" placeholder="0">
                 </div>
               </div>
             </div>
             <div class="col-waste">
               <div class="collapse multi-collapse" id="material05">
                 <div class="card card-body card-waste">
-                  <input name="divers" type="number" class="input-waste">
+                  <input name="divers" type="number" class="input-waste" placeholder="0">
                 </div>
               </div>
             </div>
           </div>
 
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-</div>
-
-</div>
-
 </div>

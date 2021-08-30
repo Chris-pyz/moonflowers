@@ -18,6 +18,14 @@
   font-size: 8px;
  }
 
+.activity_latitude {
+  visibility: hidden;
+}
+
+.activity_longitude {
+  visibility: hidden;
+}
+
  .btnmap a {
    text-decoration: none;
  }

@@ -7,6 +7,7 @@
     <h4>Bienvenue <%= @user.nickname %></h4>
     <div class="show-user-card">
         <a>Description :<br><%= @user.self_description %></a>
+        <p>Ville:</p><%= @user.city %>
     </div>
   </div>
 </div>
@@ -33,6 +34,19 @@
         <i class="far fa-trash-alt fa-sm"></i>
       <% end %>
     <% end %>
+
+        <div class="like">
+          <div class="heart">
+           <%= link_to "Voir l'action", activity_path(activity) %>
+            <i class="far fa-heart" ></i>
+
+          </div>
+
+          <div class="like-count">
+            <%= activity.likes.count  %>
+          </div>
+        </div>
+
   </div>
 </div>
 <% end %>
