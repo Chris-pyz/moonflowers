@@ -23,7 +23,6 @@ class ActivitiesController < ApplicationController
       @total += waste.quantity
     end
 
-
     @markers = [{
       lat: @activity.latitude,
       lng: @activity.longitude,
