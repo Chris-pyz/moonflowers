@@ -12,6 +12,29 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url('moon.png')
       }
     end
+
+
+
+
+    @users = User.all
+    @wastes = Waste.all
+
+    @allglass = User.waste_quantities_all["Verre"]
+    @allmetals = User.waste_quantities_all["Métal"]
+    @allPlastics = User.waste_quantities_all["Plastique"]
+    @allpapers = User.waste_quantities_all["Papier"]
+    @alldivers = User.waste_quantities_all["Divers"]
+
+    @totalwasteall = @allglass + @allmetals + @allPlastics + @allpapers + @alldivers
+
+    @allglassforchart = @allglass.to_f / @totalwasteall.to_f
+    @allmetalsforchart = @allmetals.to_f / @totalwasteall.to_f
+    @allplasticsforchart = @allPlastics.to_f / @totalwasteall.to_f
+    @allpapersforchart = @allpapers.to_f / @totalwasteall.to_f
+    @alldiversforchart = @allPlastics.to_f / @totalwasteall.to_f
+
+    @totalforchart = @allglassforchart + @allmetalsforchart + @allplasticsforchart + @allpapersforchart + @alldiversforchart
+
   end
 
   # get /activities/:id -action_path
