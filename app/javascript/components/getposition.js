@@ -14,9 +14,8 @@ function showPosition(position) {
   showActivityMap();
 }
 
-window.addEventListener('load', (event) => {
-    navigator.geolocation.getCurrentPosition(showPosition) + `Load\n`;
-});
+navigator.geolocation.getCurrentPosition(showPosition) + `Load\n`;
+
 
 }
 
