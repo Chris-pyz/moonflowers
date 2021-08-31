@@ -55,12 +55,13 @@
   </div>
 </div>
 
-
-<% @user.activities.each do |activity| %>
-<div class="card-trip">
+<div class="card-trip-scroll">
   <div class="dash-content">
-    <!--<p> <%= activity.latitude %></p>-->
-    <!--<p> <%= activity.longitude %></p>-->
+    <div class="actions-content">
+      <h2>Mes actions</h2>
+    </div>
+    <% @user.activities.each do |activity| %>
+    <div class="actions-content">
     <% if activity.waste %>
     <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
     <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
@@ -77,19 +78,17 @@
         <i class="far fa-trash-alt fa-sm"></i>
       <% end %>
     <% end %>
-
-        <div class="like">
-          <div class="heart">
-           <%= link_to "Voir l'action", activity_path(activity) %>
-            <i class="far fa-heart" ></i>
-
-          </div>
-
-          <div class="like-count">
-            <%= activity.likes.count  %>
-          </div>
-        </div>
+    <div class="like">
+      <div class="heart">
+        <%= link_to "Voir l'action", activity_path(activity) %>
+        <i class="far fa-heart" ></i>
+      </div>
+      <div class="like-count">
+        <%= activity.likes.count  %>
+      </div>
+    </div>
+    </div>
+    <% end %>
 
   </div>
 </div>
-<% end %>
