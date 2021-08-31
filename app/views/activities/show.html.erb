@@ -2,13 +2,13 @@
 <div class="card-trip">
   <div class="dash-content">
 
-<h3>Récapitulatif de ton action</h3>
+<div><h3>Collecte de <%= "#{current_user.nickname}" %></h3></div>
 
 <div class="container-action-show">
 
 <div class="card-info-user-action-show">
   <%= link_to user_path(current_user) do %>
-    <%= @activity.user.nickname %>
+    <p>Retour</p><!--<%= @activity.user.nickname %>-->
   <% end %>
 </div>
 <br>
@@ -20,50 +20,47 @@
         </div>
 
         <div class="like-count">
-          <%= @activity.likes.count  %>
+           <%= @activity.likes.count%>
         </div>
   </div>
 
+  <p>  Adresse : <%= @activity.address %></p>
 
-<div><h3>Collecte de <%= "#{current_user.nickname}" %></h3></div>
-<p> <%= @activity.address %></p>
-
-<div>
+<div class="wastes-show">
   <% if @activity.waste %>
       <% @activity.wastes.each do |waste| %>
         <% case waste.material %>
           <% when "Verre" %>
-            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="poubelle verre">  <div><%= waste.quantity %></div></div>
+            <div class="three_wastes"><div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="poubelle verre">  <div class="number"><%= waste.quantity %></div></div>
           <% when "Papier" %>
-            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="poubelle papier">  <div><%= waste.quantity %></div></div>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="poubelle papier">  <div class="number"><%= waste.quantity %></div></div>
           <% when "Plastique" %>
-            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="poubelle plastique">  <div><%= waste.quantity %></div></div>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="poubelle plastique">  <div class="number"><%= waste.quantity %></div></div></div>
           <% when "Métal" %>
-            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="poubelle métal">  <div><%= waste.quantity %></div></div>
+            <div class="two_wastes"><div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="poubelle métal">  <div class="number"><%= waste.quantity %></div></div>
           <% else %>
-            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="poubelle divers">  <div><%= waste.quantity %></div></div>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="poubelle divers">  <div class="number"><%= waste.quantity %></div></div></div>
         <% end %>
       <% end %>
-      <div> Total : <%= @total %></div>
-  <% end %>
+    <% end %>
 </div>
-
+  <div class="total"> Total : <%= @total %></div>
 
 <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
   <i class="far fa-trash-alt fa-sm"></i>
 <% end %>
 
-<div><br><h3>Carte des moonflowers</h3></div>
+  <div><br><h3>Carte des moonflowers</h3></div>
 
-<div class="map-action-show">
+  <div class="map-action-show">
 
-    <div id="map"
-      style="width: 100%; height: 280px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+      <div id="map"
+        style="width: 100%; height: 280px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
 
-</div>
+  </div>
 </div>
 </div>
 </div>
