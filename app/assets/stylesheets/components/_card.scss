@@ -3,8 +3,9 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  margin-bottom: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin-bottom: 45px;
+  border-radius: 18px;
 }
 
 .card-trip > img {
@@ -17,13 +18,15 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  text-align: left;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .card-trip p {
   font-size: 12px;
   margin: 0;
   color:black;
+  text-align: justify;
 }
 
 .card-trip .card-trip-infos {
@@ -38,4 +41,17 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-chiffres-home {
+  background-color: rgba(87, 204, 153, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+
+  p {
+    text-transform: uppercase;
+  }
 }

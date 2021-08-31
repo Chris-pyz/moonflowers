@@ -1,62 +1,47 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.istockphoto.com/vectors/illustration-of-a-group-of-volunteers-cleaning-the-park-vector-id1223049604?k=6&m=1223049604&s=612x612&w=0&h=3aGgtMba6CfI9e_6qAAodz0LHr7E3yqGFeJX9xpAqDM=);">
-  <div class="container">
-
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://media.istockphoto.com/vectors/illustration-of-a-group-of-volunteers-cleaning-the-park-vector-id1223049604?k=6&m=1223049604&s=612x612&w=0&h=3aGgtMba6CfI9e_6qAAodz0LHr7E3yqGFeJX9xpAqDM=);">
+  <div class="container-banner">
     <% if user_signed_in? %>
       <p>Bonjour  <%=current_user.name%>,</p>
     <% else %>
       <h1><strong>Bienvenue sur Moonflower</strong>!</h1>
     <% end %>
-    <p>Améliore ton environnement une action à la fois.</p>
-
-
-  </div>
-</div>
-
-
-
-
-
-<div class="card-trip">
-  <div class="card-trip-infos">
-      <h2>S'aime ton action</h2>
-
-      <%= link_to new_activity_path do %>
-        <span style="font-size: 2em; color: green; padding: 18px">
-          <i class="fas fa-recycle"></i>
-        </span>
-      <% end %>
+      <%= link_to "S'aime ton action", new_activity_path %>
   </div>
 </div>
 
 <div class="card-trip">
-  <img src="https://image.freepik.com/free-vector/cleaning-city-service-illustration-cartoon-flat-worker-cleaner-people-uniform-working-with-equipment-clean-city-urban-street_169479-789.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2></h2>
-      <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
+
+      <h2>Le concept </h2>
+      <hr>
+
+      <p>L'appli intéractive qui génère une force collective tout en rendant compte en temps réel des actes de chacun
+        Tous unis pour retrouver un environnement sain et transmettre aux générations une terre viable</p>
     </div>
   </div>
 </div>
 
-<div class="card-trip">
-  <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2></h2>
-      <p></p>
-    </div>
-  </div>
+<div class="card-chiffres-home">
+      <h2>10 000</h2>
+      <p>  moonflowers connectés</p>
+      <h2>70</h2>
+      <p> villes enregistrées</p>
+      <h2>18 000</h2>
+      <p> actions effectuées</p>
+      <h2>7 000</h2>
+      <p>  bouteilles en plastique </p>
+      <h2>2856</h2>
+      <p> bouteilles en verre </p>
+      <h2>3</h2>
+      <p>  shorts de bain récoltés </p>
+      <h2>2400</h2>
+      <p>  heures de récolte</p>
 </div>
 
+  <%# <img src="https://thumbs.dreamstime.com/b/people-volunteers-clean-park-utilize-rubbish-sort-plastic-bottles-ecology-cooperation-concept-up-other-dirt-growing-plants-173898223.jpg" /> %>
 
-<div class="card-trip">
-  <img src="https://media.istockphoto.com/vectors/illustration-of-a-group-of-volunteers-cleaning-the-park-vector-id1223049604?k=6&m=1223049604&s=612x612&w=0&h=3aGgtMba6CfI9e_6qAAodz0LHr7E3yqGFeJX9xpAqDM=" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>MoonFlower's life advice</h2>
-      <p>see more...</p>
-    </div>
-  </div>
-</div>
+  <%# <img src="https://image.freepik.com/free-vector/cleaning-city-service-illustration-cartoon-flat-worker-cleaner-people-uniform-working-with-equipment-clean-city-urban-street_169479-789.jpg" /> %>
+
+  <%# <img src="https://media.istockphoto.com/vectors/illustration-of-a-group-of-volunteers-cleaning-the-park-vector-id1223049604?k=6&m=1223049604&s=612x612&w=0&h=3aGgtMba6CfI9e_6qAAodz0LHr7E3yqGFeJX9xpAqDM=" /> %>
