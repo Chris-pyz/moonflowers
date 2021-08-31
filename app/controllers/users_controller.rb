@@ -10,6 +10,23 @@ class UsersController < ApplicationController
   def show
     # @user = current_user
     @user = User.find(params[:id])
+
+    @wastes = Waste.all
+    @allglass = @user.waste_quantities["Verre"]
+    @allmetals = @user.waste_quantities["Métal"]
+    @allPlastics = @user.waste_quantities["Plastique"]
+    @allpapers = @user.waste_quantities["Papier"]
+    @alldivers = @user.waste_quantities["Divers"]
+
+    @totalwasteall = @allglass + @allmetals + @allPlastics + @allpapers + @alldivers
+
+    @allglassforchart = @allglass.to_f / @totalwasteall.to_f
+    @allmetalsforchart = @allmetals.to_f / @totalwasteall.to_f
+    @allplasticsforchart = @allPlastics.to_f / @totalwasteall.to_f
+    @allpapersforchart = @allpapers.to_f / @totalwasteall.to_f
+    @alldiversforchart = @allPlastics.to_f / @totalwasteall.to_f
+
+    @totalforchart = @allglassforchart + @allmetalsforchart + @allplasticsforchart + @allpapersforchart + @alldiversforchart
   end
 
   # -----------   en attente de savoir si utile ----------
