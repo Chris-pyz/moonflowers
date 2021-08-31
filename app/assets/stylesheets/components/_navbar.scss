@@ -6,9 +6,17 @@
 .navbar-lewagon h3 {
   position: fixed;
   margin-left: 55px;
-  margin-top: 7px
+  margin-top: 7px;
+  font-size: 1.55rem;
+
 }
-;
+
+.navbar-accueil {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.1rem !important;
+
+}
+
 .navbar-lewagon .nav#mainMenuBarAnchor {
   position: fixed;
   top: 0;

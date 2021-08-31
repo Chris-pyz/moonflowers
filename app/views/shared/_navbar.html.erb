@@ -3,6 +3,7 @@
   <%= link_to root_path, class: "navbar-brand" do %>
   <h3>MoonFlowers</h3>
     <%= image_tag "https://image.flaticon.com/icons/png/512/3024/3024889.png" %>
+    <p class="navbar-accueil"> Accueil </p>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,16 +17,17 @@
 
         <li class="nav-item dropdown">
           <%= image_tag "https://image.flaticon.com/icons/png/512/861/861143.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <p>Action</p>
+          <p>Nos Actions</p>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Besoin de Renfort", "#", class: "dropdown-item" %>
-            <%= link_to "Contact Mairie ", "#", class: "dropdown-item" %>
+            <%= link_to "S'aime ton Action", new_activity_path, class: "dropdown-item" %>
+            <%= link_to "Collecte de Groupe", "#", class: "dropdown-item" %>
+            <%= link_to "Contacter la Mairie ", "#", class: "dropdown-item" %>
           </div>
         </li>
 
         <li class="nav-item dropdown">
           <%= image_tag "https://image.flaticon.com/icons/png/512/4474/4474452.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <p>communauté</p>
+          <p>Notre Communauté</p>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Communauté", activities_path, class: "dropdown-item" %>
             <%= link_to "Forum", "#", class: "dropdown-item" %>
@@ -37,9 +39,9 @@
 
         <%= cl_image_tag current_user.avatar_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
-          <p>Profil</p>
+          <p>Mon Profil</p>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profil", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Mon Profil", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
