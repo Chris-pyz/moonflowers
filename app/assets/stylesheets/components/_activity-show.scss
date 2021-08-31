@@ -1,28 +1,26 @@
-.three_wastes {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.two_wastes {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-}
-
 .wastes-show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   text-align: center;
   background-color: rgba(87, 204, 153, 0.1);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 3px 4px 5px #57CC99;
 }
+
+.uniq_wastes {
+   margin-top: 7px;
+   padding: 13px;
+}
+
+
+
 .number {
   background-color: #57CC99;
   border-radius: 5px;
   margin-top: 5px;
+  text-align: center;
 }
 
 .total {
