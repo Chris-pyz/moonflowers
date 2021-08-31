@@ -25,47 +25,46 @@
   </div>
 
 
-<div><h3>Collecte du jour </h3></div>
-<p> <%= @activity.latitude %></p>
-<p> <%= @activity.longitude %></p>
+<div><h3>Collecte de <%= "#{current_user.nickname}" %></h3></div>
+<p> <%= @activity.address %></p>
+
+<div>
+  <% if @activity.waste %>
+      <% @activity.wastes.each do |waste| %>
+        <% case waste.material %>
+          <% when "Verre" %>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="poubelle verre">  <div><%= waste.quantity %></div></div>
+          <% when "Papier" %>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="poubelle papier">  <div><%= waste.quantity %></div></div>
+          <% when "Plastique" %>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="poubelle plastique">  <div><%= waste.quantity %></div></div>
+          <% when "Métal" %>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="poubelle métal">  <div><%= waste.quantity %></div></div>
+          <% else %>
+            <div><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="poubelle divers">  <div><%= waste.quantity %></div></div>
+        <% end %>
+      <% end %>
+      <div> Total : <%= @total %></div>
+  <% end %>
+</div>
 
 
-<% if @activity.waste %>
-<% @activity.wastes.each do |waste| %>
-<p><%= waste.material %> : <%= waste.quantity %></p>
-<% end %>
- <p> Total : <%= @total %></p>
-<% end %>
-
-
-
-
-<%= link_to edit_activity_path(@activity) do %>
-  <i class="fas fa-pencil-alt fa-sm"></i>
-<% end %>
 <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
   <i class="far fa-trash-alt fa-sm"></i>
 <% end %>
 
-
-
-
 <div><br><h3>Carte des moonflowers</h3></div>
-
 
 <div class="map-action-show">
 
     <div id="map"
-      style="width: 100%; height: 600px;"
+      style="width: 100%; height: 280px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
 </div>
 
-<div class="button-show-activiy">
-    <%= link_to 'Communauté des moonflowers', activities_path, class:"btn-back-community" %>
-</div>
 
 </div>
 
