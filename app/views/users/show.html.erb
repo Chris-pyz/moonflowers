@@ -13,6 +13,49 @@
   </div>
 </div>
 
+<div class="card-trip">
+  <div class="dash-content">
+    <h3>Communauté Moonflower </h3>
+    <div class="donut" style="--first: <%= @allplasticsforchart %>; --second: <%= @allmetalsforchart %>; --third: <%= @allpapersforchart %>; --fourth: <%= @allglassforchart %>; --fifth: <%= @alldiversforchart %>">
+      <div class="donut__slice donut__slice__first"></div>
+      <div class="donut__slice donut__slice__second"></div>
+      <div class="donut__slice donut__slice__third"></div>
+      <div class="donut__slice donut__slice__fourth"></div>
+      <div class="donut__slice donut__slice__fifth"></div>
+      <div class="donut__label">
+        <div class="donut__label__heading">
+          Nos résultats
+        </div>
+        <div class="donut__label__sub">
+          en chiffres
+        </div>
+      </div>
+    </div>
+    <span style="font-size: 1em; color: #ff6838; padding: 18px">
+      <i class="fas fa-dot-circle"></i> plastique <%= @allPlastics %>
+    </span>
+    <span style="font-size: 1em; color: #ffc820; padding: 18px">
+      <i class="fas fa-dot-circle"></i> metal <%= @allmetals %>
+    </span>
+    <br>
+    <span style="font-size: 1em; color: #97c95c; padding: 18px">
+      <i class="fas fa-dot-circle"></i> papier <%= @allpapers %>
+    </span>
+    <span style="font-size: 1em; color: #1cb2f6; padding: 18px">
+      <i class="fas fa-dot-circle"></i> verre <%= @allglass %>
+    </span>
+    <br>
+     <span style="font-size: 1em; color: #1685b8; padding: 18px">
+      <i class="fas fa-dot-circle"></i> diver <%= @alldivers %>
+    </span>
+    <br>
+    <span style="font-size: 1em; color: #cf6626; padding: 18px">
+      total = <%= @totalwasteall %>
+    </span>
+  </div>
+</div>
+
+
 <% @user.activities.each do |activity| %>
 <div class="card-trip">
   <div class="dash-content">
@@ -50,32 +93,3 @@
   </div>
 </div>
 <% end %>
-
-<div class="card-trip">
-  <div class="dash-content">
-    <div class="donut" style="--first: .40; --second: .33; --third: .12; --fourth: .08; --fifth: 0.07">
-      <div class="donut__slice donut__slice__first"></div>
-      <div class="donut__slice donut__slice__second"></div>
-      <div class="donut__slice donut__slice__third"></div>
-      <div class="donut__slice donut__slice__fourth"></div>
-      <div class="donut__slice donut__slice__fifth"></div>
-      <div class="donut__label">
-        <div class="donut__label__heading">
-          Tes collectes
-        </div>
-        <div class="donut__label__sub">
-          la planète te remercie !
-        </div>
-      </div>
-    </div>
-    <span style="font-size: 1em; color: #ff6838; padding: 18px">
-      <i class="fas fa-dot-circle"></i> plastique
-    </span>
-    <span style="font-size: 1em; color: #ffc820; padding: 18px">
-      <i class="fas fa-dot-circle"></i> metal
-    </span>
-    <span style="font-size: 1em; color: #97c95c; padding: 18px">
-      <i class="fas fa-dot-circle"></i> papier
-    </span>
-  </div>
-</div>
