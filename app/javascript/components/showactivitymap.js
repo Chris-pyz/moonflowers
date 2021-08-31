@@ -3,7 +3,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 
 // recuperer l'endroit sur lequel afficher
-const mapActivity = document.querySelector("#map-new-activity");
 
 // recuperer valeur input lat long
 
@@ -12,6 +11,7 @@ const mapActivity = document.querySelector("#map-new-activity");
 
 
 const showActivityMap = () => {
+  const mapActivity = document.querySelector("#map-new-activity");
   const latitude = document.querySelector("#activity_latitude").value;
   const longitude = document.querySelector("#activity_longitude").value;
   const lng = longitude;
