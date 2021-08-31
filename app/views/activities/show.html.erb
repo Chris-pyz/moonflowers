@@ -2,16 +2,11 @@
 <div class="card-trip">
   <div class="dash-content">
 
-<div><h3>Collecte de <%= "#{current_user.nickname}" %></h3></div>
+<div class="like-head">
 
-<div class="container-action-show">
 
-<div class="card-info-user-action-show">
-  <%= link_to user_path(current_user) do %>
-    <p>Retour</p><!--<%= @activity.user.nickname %>-->
-  <% end %>
-</div>
-<br>
+
+  <h3>Collecte de <%= "#{current_user.nickname}" %></h3>
   <div class="like">
         <div class="heart">
           <%= link_to activity_likes_path(@activity), method: :create do %>
@@ -23,7 +18,13 @@
            <%= @activity.likes.count%>
         </div>
   </div>
+</div>
 
+ <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
+    <i class="far fa-trash-alt fa-sm trash"></i>
+  <% end %>
+
+<div class="container-action-show">
   <p>  Adresse : <%= @activity.address %></p>
 
 <div class="wastes-show">
@@ -46,9 +47,7 @@
 </div>
   <div class="total"> Total : <%= @total %></div>
 
-<%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
-  <i class="far fa-trash-alt fa-sm"></i>
-<% end %>
+
 
   <div><br><h3>Carte des moonflowers</h3></div>
 
