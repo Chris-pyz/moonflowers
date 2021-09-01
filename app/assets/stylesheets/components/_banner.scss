@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
-  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.8);
+  margin-bottom: 45px;
+  box-shadow: 3px 4px 5px #13915994;
   border-radius: 5px;
 
 }
@@ -39,36 +39,11 @@
 }
 
 .banner a {
-  color: red;
-  background-color: white;
+  padding: 8px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  color: whitesmoke;
+  background-color: #38A3A5;
   text-decoration: none;
-}
-
-.search-bar {
-  width: 1100px;
-  height: 60px;
- margin:auto;
- background-color: white;
- display: flex;
- border-radius: 32px;
- padding: 15px;
-}
-
-.search-form {
-  width: 200px;
-  border-right: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-form p {
-  color:black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-button {
-  margin-left: -10px;
 }

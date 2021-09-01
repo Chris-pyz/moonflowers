@@ -38,7 +38,7 @@
 }
 
 .thecontent {
-  margin-top: 88px;
+  margin-top: 100px;
   margin-bottom: 50px;
   margin-left: 18px;
   margin-right: 18px;
@@ -54,7 +54,6 @@
 
 .navbar-nav li {
     margin-right: 60px;
-    margin-left: 5px;
     list-style: none;
 }
 
@@ -62,10 +61,24 @@
     display: block;
     position: fixed;
     left: 0;
-    top: 146px;
+    top: 162px;
     width: 100%;
 }
 
 .navbar-collapse {
   margin: 10px 20px;
+}
+
+
+.nav-middle {
+  text-align: center;
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.avatar {
+    width: 56px;
+    border-radius: 50%;
 }
