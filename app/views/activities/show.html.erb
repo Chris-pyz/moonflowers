@@ -5,7 +5,10 @@
 <div class="card-trip">
   <div class="dash-content">
        <div class="like-head">
-       <h3>Collecte de <%= "#{@activity.user.nickname}" %></h3>
+       <h3>Collecte de <%= link_to user_path(@activity.user) do%>
+       <%=@activity.user.nickname %>
+       <% end %>
+       </h3>
           <div class="like">
               <div class="heart"><%= link_to activity_likes_path(@activity), method: :create do %><i class="far fa-heart" ></i><% end %></div>
               <div class="like-count"><%= @activity.likes.count%></div>
