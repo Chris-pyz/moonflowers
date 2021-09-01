@@ -20,7 +20,7 @@
           <p>Nos Actions</p>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "S'aime ton Action", new_activity_path, class: "dropdown-item" %>
-            <%= link_to "Collecte de Groupe", event_path, class: "dropdown-item" %>
+            <%= link_to "Collecte de Groupe", "", class: "dropdown-item" %>
             <%= link_to "Contacter la Mairie ", "#", class: "dropdown-item" %>
           </div>
         </li>
@@ -31,7 +31,7 @@
           <div class="dropdown-menu dropdown-menu-right nav-middle" aria-labelledby="navbarDropdown">
             <%= link_to "Communauté", activities_path, class: "dropdown-item" %>
             <%= link_to "Forum", "#", class: "dropdown-item" %>
-            <%= link_to "Evènements", "#", class: "dropdown-item" %>
+            <%= link_to "Evènements", event_path, class: "dropdown-item" %>
           </div>
         </li>
 
