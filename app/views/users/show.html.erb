@@ -5,7 +5,13 @@
     <div class="pic-dash">
       <%= cl_image_tag @user.avatar_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     </div>
-    <h4>Bienvenue <%= @user.nickname %></h4>
+   <h4>
+     <% if current_user == @user%>
+      Bienvenue <%=@user.nickname %>
+    <% else %>
+      Profil de <%=@user.nickname %>
+    <% end %>
+   </h4>
     <div class="show-user-card">
         <a>Description :<br><%= @user.self_description %></a>
         <p>Ville:</p><%= @user.city %>
