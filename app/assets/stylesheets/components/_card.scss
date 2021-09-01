@@ -3,9 +3,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.7);
   margin-bottom: 45px;
-  border-radius: 18px;
 }
 
 .card-trip > img {
@@ -44,12 +42,14 @@
 }
 
 .card-chiffres-home {
-  background-color: rgba(87, 204, 153, 1);
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 18px;
+  h3 {
+    margin-top: 10px;
+  }
 
   p {
     text-transform: uppercase;
