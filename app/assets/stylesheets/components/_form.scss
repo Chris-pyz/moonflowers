@@ -23,8 +23,12 @@ label {
     margin-top: 12px;
 }
 
-.btn-primary:hover {
-    color: #fff;
-    background-color: white;
-    border-color: white;
+.bottomtext {
+    position: absolute;
+    margin-top: 80px;
+}
+
+.bottomtext a {
+    font-size: 16px;
+    font-weight: normal;
 }
