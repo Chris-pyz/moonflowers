@@ -13,17 +13,14 @@ class ActivitiesController < ApplicationController
       }
     end
 
-
-
-
     @users = User.all
     @wastes = Waste.all
 
-    @allglass = User.waste_quantities_all["Verre"]
-    @allmetals = User.waste_quantities_all["Métal"]
-    @allPlastics = User.waste_quantities_all["Plastique"]
-    @allpapers = User.waste_quantities_all["Papier"]
-    @alldivers = User.waste_quantities_all["Divers"]
+    @allglass = User.waste_quantities_all["Verre"] || 0 #? User.waste_quantities_all["Verre"] : 0
+    @allmetals = User.waste_quantities_all["Métal"] || 0#? User.waste_quantities_all["Verre"] : 0
+    @allPlastics = User.waste_quantities_all["Plastique"] || 0#? User.waste_quantities_all["Verre"] : 0
+    @allpapers = User.waste_quantities_all["Papier"] || 0#? User.waste_quantities_all["Verre"] : 0
+    @alldivers = User.waste_quantities_all["Divers"] || 0#? User.waste_quantities_all["Verre"] : 0
 
     @totalwasteall = @allglass + @allmetals + @allPlastics + @allpapers + @alldivers
 
