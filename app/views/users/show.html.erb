@@ -1,7 +1,13 @@
 <div class="carte-profil">
   <div class="carte-profil-identite">
     <%= cl_image_tag @user.avatar_photo.key, class: "avatar-carte-profil", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <p><%= @user.name %></p>
+    <p>
+     <% if current_user == @user%>
+      <%=@user.name %>
+    <% else %>
+      <%=@user.name %>
+    <% end %>
+    </p>
   </div>
   <div class="carte-description-totale">
     <div class="carte-profil-ville">

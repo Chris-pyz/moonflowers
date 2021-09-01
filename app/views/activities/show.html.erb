@@ -1,44 +1,60 @@
 <br>
+<div class="container-action-show">
+</div>
+
 <div class="card-trip">
-    <div class="dash-content">
+  <div class="dash-content">
        <div class="like-head">
-       <h3>Collecte de <%= "#{current_user.nickname}" %></h3>
+       <h3>Collecte de <%= link_to user_path(@activity.user) do%>
+       <%=@activity.user.nickname %>
+       <% end %>
+       </h3>
           <div class="like">
               <div class="heart"><%= link_to activity_likes_path(@activity), method: :create do %><i class="far fa-heart" ></i><% end %></div>
               <div class="like-count"><%= @activity.likes.count%></div>
           </div>
       </div>
 
-    <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %><i class="far fa-trash-alt fa-sm trash"></i><% end %>
 
-<div class="container-action-show">
-  <p>  Adresse : <%= @activity.address %></p>
 
+  <div class="wastescard">
+    <p>  Adresse : <%= @activity.address %></p>
   <div class="wastes-show">
     <% if @activity.waste %>
         <% @activity.wastes.each do |waste| %>
           <% case waste.material %>
                 <% when "Verre" %>
-                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039781.png" alt="poubelle verre"><div class="number"><%= waste.quantity %></div></div>
+                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/4185/4185152.png" alt="poubelle verre"><div class="number"><%= waste.quantity %></div></div>
                 <% when "Papier" %>
-                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039780.png" alt="poubelle papier"><div class="number"><%= waste.quantity %></div></div>
+                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1598/1598172.png" alt="poubelle papier"><div class="number"><%= waste.quantity %></div></div>
                 <% when "Plastique" %>
-                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039778.png" alt="poubelle plastique"><div class="number"><%= waste.quantity %></div></div>
+                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/4380/4380438.png" alt="poubelle plastique"><div class="number"><%= waste.quantity %></div></div>
                 <% when "Métal" %>
-                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039782.png" alt="poubelle métal"><div class="number"><%= waste.quantity %></div></div>
+                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/2372/2372106.png" alt="poubelle métal"><div class="number"><%= waste.quantity %></div></div>
                 <% else %>
-                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/1039/1039763.png" alt="poubelle divers"><div class="number"><%= waste.quantity %></div></div>
+                    <div class="uniq_wastes"><img width="60" height="60" src="https://image.flaticon.com/icons/png/512/4815/4815240.png" alt="poubelle divers"><div class="number"><%= waste.quantity %></div></div>
           <% end %>
         <% end %>
       <% end %>
   </div>
+  <div class="total"> Total : <%=@total%> déchet<%=@total>1 ? "s" : ""%></div>
+  <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %><i class="far fa-trash-alt fa-sm trash" style="margin-bottom: 7px;"></i><% end %>
+</div>
+</div>
+</div>
 
-  <div class="total"> Total : <%= @total %></div>
-
+<div class="card-trip">
   <div class="btnje">
-    <%= link_to "Jettes un coup d'oeil à la Communauté", activities_path %>
+  Jettes un coup d'oeil à la Communauté
+<div class="comm">
+   <%= link_to activities_path do %>
+   <%= image_tag "https://image.flaticon.com/icons/png/512/4474/4474452.png" %>
+   <% end %>
+</div>
   </div>
+</div>
 
+<div class="card-trip">
   <div><br><h5>Lieu d'action</h5></div>
 
   <div class="map-action-show">
@@ -48,7 +64,4 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
   </div>
-
-</div>
-</div>
 </div>
