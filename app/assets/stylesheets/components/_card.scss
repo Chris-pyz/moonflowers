@@ -84,3 +84,29 @@
   }
 
 }
+
+.carte-profil {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 16px;
+  margin-bottom: 45px;
+}
+
+.carte-profil-identite {
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.carte-description-totale {
+  text-align: center;
+}
+
+.carte-profil-description {
+  p {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}

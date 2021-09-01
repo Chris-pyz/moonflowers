@@ -1,14 +1,14 @@
-
-
-<div class="card-trip">
-  <div class="dash-content">
-    <div class="pic-dash">
-      <%= cl_image_tag @user.avatar_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<div class="carte-profil">
+  <div class="carte-profil-identite">
+    <%= cl_image_tag @user.avatar_photo.key, class: "avatar-carte-profil", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <p><%= @user.name %></p>
+  </div>
+  <div class="carte-description-totale">
+    <div class="carte-profil-ville">
+      <p> <i class="fas fa-street-view"></i> <%= @user.city %></p>
     </div>
-    <h4>Bienvenue <%= @user.nickname %></h4>
-    <div class="show-user-card">
-        <a>Description :<br><%= @user.self_description %></a>
-        <p>Ville:</p><%= @user.city %>
+    <div class="carte-profil-description">
+      <p> <%= @user.self_description %></p>
     </div>
   </div>
 </div>
@@ -31,27 +31,39 @@
         </div>
       </div>
     </div>
-    <span style="font-size: 1em; color: #ff6838; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
-    </span>
-    <span style="font-size: 1em; color: #ffc820; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Métal <%= @allmetals %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #97c95c; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Papier <%= @allpapers %>
-    </span>
-    <span style="font-size: 1em; color: #1cb2f6; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Verre <%= @allglass %>
-    </span>
-    <br>
-     <span style="font-size: 1em; color: #1685b8; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #cf6626; padding: 18px">
-      Total = <%= @totalwasteall %>
-    </span>
+
+    <div class="mega-div-dechet">
+    <div class="dechet-colonnes">
+        <div class="dechet-col-1">
+          <span style="font-size: 1em; color: #ff6838; ">
+            <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
+          </span>
+          <span style="font-size: 1em; color: #ffc820; ">
+            <i class="fas fa-dot-circle"></i> Métal <%= @allmetals %>
+          </span>
+
+          <span style="font-size: 1em; color: #97c95c; ">
+            <i class="fas fa-dot-circle"></i> Papier <%= @allpapers %>
+          </span>
+        </div>
+
+        <div class="dechet-col-2">
+          <span style="font-size: 1em; color: #1cb2f6; ">
+            <i class="fas fa-dot-circle"></i> Verre <%= @allglass %>
+          </span>
+          <span style="font-size: 1em; color: #1685b8; ">
+            <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
+          </span>
+        </div>
+        <br>
+      </div>
+
+      <span style="font-size: 1em; color: #cf6626; display: flex; justify-content: center; margin-top: 10px;">
+        Total = <%= @totalwasteall %>
+      </span>
+    </div>
+
+
   </div>
 </div>
 

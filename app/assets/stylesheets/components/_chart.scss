@@ -165,3 +165,22 @@
   -webkit-transform: rotate(calc(360deg * var(--fifth-start) + 45deg + var(--donut-spacing-deg)));
           transform: rotate(calc(360deg * var(--fifth-start) + 45deg + var(--donut-spacing-deg)));
 }
+
+
+
+.dechet-colonnes {
+  display: flex;
+  justify-content: center;
+}
+
+.dechet-col-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dechet-col-2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
