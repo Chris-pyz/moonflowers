@@ -78,36 +78,29 @@
     <div class="actions-content">
       <h2>Mes actions</h2>
     </div>
-    <% @user.activities.each do |activity| %>
-    <div class="actions-content">
-    <% if activity.waste %>
-    <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
-
-    <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
-    <p> <%= activity.address %></p>
-    <p>Félicitations ! 💪</p>
-      <% if activity.user == current_user %>
-        <%= link_to edit_activity_path(activity) do %>
-          <i class="fas fa-pencil-alt fa-sm"></i>
-        <% end %>
-      <% end %>
+    <% @user.activities.order(created_at: :desc).each do |activity| %>
+        <div class="actions-content">
+            <% if activity.waste %>
+              <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
+              <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
+              <p> <%= activity.address %></p>
+              <p>Félicitations ! 💪</p>
+            <% end %>
+          <% if activity.user == current_user %>
+            <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
+              <i class="far fa-trash-alt fa-sm"></i>
+            <% end %>
+          <% end %>
+          <div class="like">
+            <div class="heart">
+              <%= link_to "Voir l'action", activity_path(activity) %>
+              <i class="far fa-heart" ></i>
+            </div>
+            <div class="like-count">
+              <%= activity.likes.count  %>
+            </div>
+          </div>
+        </div>
     <% end %>
-    <% if activity.user == current_user %>
-      <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
-        <i class="far fa-trash-alt fa-sm"></i>
-      <% end %>
-    <% end %>
-    <div class="like">
-      <div class="heart">
-        <%= link_to "Voir l'action", activity_path(activity) %>
-        <i class="far fa-heart" ></i>
-      </div>
-      <div class="like-count">
-        <%= activity.likes.count  %>
-      </div>
-    </div>
-    </div>
-    <% end %>
-
   </div>
 </div>
