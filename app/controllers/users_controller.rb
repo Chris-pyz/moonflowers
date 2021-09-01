@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     # @user = current_user
     @user = User.find(params[:id])
     @user_wastes = @user.waste_quantities
-
     # @wastes = Waste.all
     # @allglass = @user.waste_quantities["Verre"]
     # @allmetals = @user.waste_quantities["Métal"]
@@ -19,7 +18,7 @@ class UsersController < ApplicationController
     # @allpapers = @user.waste_quantities["Papier"]
     # @alldivers = @user.waste_quantities["Divers"]
 
-    @totalwasteall = @allglass + @allmetals + @allPlastics + @allpapers + @alldivers
+    # @totalwasteall = @allglass + @allmetals + @allPlastics + @allpapers + @alldivers
 
     @allglassforchart = @allglass.to_f / @totalwasteall
     @allmetalsforchart = @allmetals.to_f / @totalwasteall
@@ -27,7 +26,7 @@ class UsersController < ApplicationController
     @allpapersforchart = @allpapers.to_f / @totalwasteall
     @alldiversforchart = @allPlastics.to_f / @totalwasteall
 
-    @totalforchart = @allglassforchart + @allmetalsforchart + @allplasticsforchart + @allpapersforchart + @alldiversforchart
+    @totalforchart =   (if @allglassforchart.nil? @allglassforchart = 0 : @allglassforchart) + @allmetalsforchart + @allplasticsforchart + @allpapersforchart + @alldiversforchart
   end
 
   # -----------   en attente de savoir si utile ----------
