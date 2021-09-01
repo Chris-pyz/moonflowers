@@ -55,3 +55,32 @@
     text-transform: uppercase;
   }
 }
+
+.carte-concept {
+  background-image: url('https://bernardgeorges.fr/wp-content/uploads/2021/01/Les-cites-du-futur.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 12px;
+  margin-bottom: 45px;
+}
+
+.carte-concept-contenu {
+  background-color: white;
+  width: 50%;
+  padding: 12px;
+  text-align: center;
+  opacity: 0.9;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    padding: 0;
+    text-transform: uppercase;
+
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+}
