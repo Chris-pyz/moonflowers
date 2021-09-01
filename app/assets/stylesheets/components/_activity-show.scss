@@ -1,12 +1,14 @@
+.wastes-card {
+  background-color: rgba(87, 204, 153, 0.1);
+  border-radius: 5px;
+  box-shadow: 3px 4px 5px #57CC99;
+}
 .wastes-show {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  background-color: rgba(87, 204, 153, 0.1);
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 5px #57CC99;
 }
 
 .uniq_wastes {
