@@ -110,3 +110,33 @@
     font-size: 16px;
   }
 }
+
+.carte-activite-description {
+ p {
+   margin-bottom: 0;
+   font-size: 15px;
+ }
+}
+
+.carte-activite-boutons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.fa-trash-alt {
+  font-size: 22px;
+}
+
+.lien-detail {
+  a {
+    text-decoration: none;
+    background-color: #4caf4fd5;
+    color: white;
+    border-radius: 15px;
+    padding: 4px 20px;
+    text-align: center;
+
+  }
+}

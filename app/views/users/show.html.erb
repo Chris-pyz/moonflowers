@@ -21,7 +21,7 @@
 
 <div class="card-trip">
   <div class="dash-content">
-    <h3>Communauté Moonflower </h3>
+    <h3 style="text-align: center; font-size: 26px;">Communauté Moonflower </h3>
     <div class="donut" style="--first: <%= @allplasticsforchart %>; --second: <%= @allmetalsforchart %>; --third: <%= @allpapersforchart %>; --fourth: <%= @allglassforchart %>; --fifth: <%= @alldiversforchart %>">
       <div class="donut__slice donut__slice__first"></div>
       <div class="donut__slice donut__slice__second"></div>
@@ -30,7 +30,11 @@
       <div class="donut__slice donut__slice__fifth"></div>
       <div class="donut__label">
         <div class="donut__label__heading">
-          Nos résultats
+          <% if current_user == @user%>
+            Mes résultats
+          <% else %>
+            Ses résultats
+          <% end %>
         </div>
         <div class="donut__label__sub">
           en chiffres
@@ -73,34 +77,42 @@
   </div>
 </div>
 
-<div class="card-trip-scroll">
-  <div class="dash-content">
-    <div class="actions-content">
-      <h2>Mes actions</h2>
-    </div>
-    <% @user.activities.order(created_at: :desc).each do |activity| %>
-        <div class="actions-content">
-            <% if activity.waste %>
-              <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
-              <p>Hey, le total de cette collecte s'élève à !</p>
-              <p> à l'adresse :<%= activity.address %></p>
-              <p>Félicitations ! 💪</p>
-            <% end %>
-          <% if activity.user == current_user %>
-            <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
-              <i class="far fa-trash-alt fa-sm"></i>
-            <% end %>
-          <% end %>
-          <div class="like">
-            <div class="heart">
-              <%= link_to "Voir l'action", activity_path(activity) %>
-              <i class="far fa-heart" ></i>
+
+
+  <div class="card-trip-scroll">
+    <div class="dash-content">
+
+<div class="actions-content">
+  <h2>Mes actions</h2>
+</div>
+      <% @user.activities.order(created_at: :desc).each do |activity| %>
+          <div class="actions-content">
+
+            <div class="carte-activite-description">
+              <% if activity.waste %>
+                <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
+                <p>Total collecté: </p>
+                <p><%= activity.address %></p>
+              <% end %>
             </div>
-            <div class="like-count">
-              <%= activity.likes.count  %>
+            <div class="carte-activite-boutons">
+              <% if activity.user == current_user %>
+                <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
+                <i class="far fa-trash-alt fa-sm"></i>
+                <% end %>
+              <% end %>
+
+              <div class="lien-detail"><%= link_to "Voir détails", activity_path(activity) %></div>
+              <div class="like">
+                <div class="heart">
+                  <i class="far fa-heart" ></i>
+                </div>
+                <div class="like-count">
+                  <%= activity.likes.count  %>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
