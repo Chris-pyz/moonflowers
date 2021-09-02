@@ -11,6 +11,8 @@ require("channels")
 import { initMapbox } from '../plugins/init_mapbox';
 import { getPosition } from '../components/getposition';
 import { likeHeart } from '../components/like';
+import { eventfakers } from '../components/eventfake';
+
 // document.addEventListener('turbolinks:load', () => { JAI COMMNTÉ CETTE LIGNE
 //  initMapbox();                                        JAI COMMNTÉ CETTE LIGNE
 //  getPosition();                            JAI COMMNTÉ CETTE LIGNE
@@ -45,4 +47,5 @@ import "bootstrap";
   initMapbox();
   getPosition();
   likeHeart();
+  eventfakers();
 })
