@@ -10,7 +10,7 @@
        <% end %>
        </h3>
           <div class="like">
-              <div class="heart"><%= link_to activity_likes_path(@activity), method: :create do %><i class="fas fa-heart" ></i><% end %></div>
+              <div class="heart"><%= link_to activity_likes_path(@activity), method: :create do %><i class="fas fa-heart" style="color: red;"></i><% end %></div>
               <div class="like-count"><%= @activity.likes.count%></div>
           </div>
       </div>
@@ -51,7 +51,7 @@
 
 <div class="card-trip">
   <div class="btnje">
-  Jettes un coup d'oeil à la Communauté
+  Jette un coup d'oeil à la Communauté
 <div class="comm">
    <%= link_to activities_path do %>
    <%= image_tag "https://image.flaticon.com/icons/png/512/4474/4474452.png" %>
