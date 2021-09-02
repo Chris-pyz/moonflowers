@@ -44,7 +44,7 @@
 
 
     <div class="mega-div-dechet">
-    <div class="dechet-colonnes">
+      <div class="dechet-colonnes">
         <div class="dechet-col-1">
           <span style="font-size: 1em; color: #ff6838; ">
             <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
@@ -67,6 +67,7 @@
           </span>
         </div>
         <br>
+
       </div>
 
       <span style="font-size: 1em; color: #cf6626; display: flex; justify-content: center; margin-top: 10px;">
@@ -118,7 +119,7 @@
               <div class="lien-detail"><%= link_to "Voir détails", activity_path(activity) %></div>
               <div class="like">
                 <div class="heart">
-                  <i class="far fa-heart" ></i>
+                  <i class="fas fa-heart" ></i>
                 </div>
                 <div class="like-count">
                   <%= activity.likes.count  %>
