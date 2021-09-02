@@ -61,7 +61,7 @@
     display: block;
     position: fixed;
     left: 0;
-    top: 162px;
+    top: 161px;
     width: 100%;
 }
 
@@ -81,4 +81,9 @@
 .avatar {
     width: 56px;
     border-radius: 50%;
+}
+
+.alignright {
+  text-align: right;
+  margin-left: 274px;
 }

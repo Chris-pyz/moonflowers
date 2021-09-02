@@ -1,6 +1,17 @@
 
 .dash-content {
   padding: 12px;
+  h3 {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    text-align: center;
+    padding: 0px !important;
+    margin-bottom: 18px !important;
+    a {
+      color: #4caf4fd5;
+    }
+  }
+
 }
 
 .pic-dash {
@@ -23,6 +34,12 @@
   margin-bottom: 15px;
   margin-top: 10px;
   padding: 5px 0px;
+  h2 {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    padding: 0px !important;
+    margin-bottom: 18px !important;
+  }
 }
 
 .card-trip-scroll h2 {

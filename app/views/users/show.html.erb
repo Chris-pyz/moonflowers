@@ -1,27 +1,27 @@
-
-
-<div class="card-trip">
-  <div class="dash-content">
-    <div class="pic-dash">
-      <%= cl_image_tag @user.avatar_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    </div>
-   <h4>
+<div class="carte-profil">
+  <div class="carte-profil-identite">
+    <%= cl_image_tag @user.avatar_photo.key, class: "avatar-carte-profil", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <p>
      <% if current_user == @user%>
-      Bienvenue <%=@user.nickname %>
+      <%=@user.name %>
     <% else %>
-      Profil de <%=@user.nickname %>
+      <%=@user.name %>
     <% end %>
-   </h4>
-    <div class="show-user-card">
-        <a>Description :<br><%= @user.self_description %></a>
-        <p>Ville:</p><%= @user.city %>
+    </p>
+  </div>
+  <div class="carte-description-totale">
+    <div class="carte-profil-ville">
+      <p> <i class="fas fa-street-view"></i> <%= @user.city %></p>
+    </div>
+    <div class="carte-profil-description">
+      <p> <%= @user.self_description %></p>
     </div>
   </div>
 </div>
 
 <div class="card-trip">
   <div class="dash-content">
-    <h3>Communauté Moonflower </h3>
+    <h3 style="text-align: center; font-size: 26px;">Communauté MoonFlowers </h3>
     <div class="donut" style="--first: <%= @allplasticsforchart %>; --second: <%= @allmetalsforchart %>; --third: <%= @allpapersforchart %>; --fourth: <%= @allglassforchart %>; --fifth: <%= @alldiversforchart %>">
       <div class="donut__slice donut__slice__first"></div>
       <div class="donut__slice donut__slice__second"></div>
@@ -30,72 +30,103 @@
       <div class="donut__slice donut__slice__fifth"></div>
       <div class="donut__label">
         <div class="donut__label__heading">
-          Nos résultats
+          <% if current_user == @user%>
+            Mes résultats
+          <% else %>
+            Ses résultats
+          <% end %>
         </div>
         <div class="donut__label__sub">
           en chiffres
         </div>
       </div>
     </div>
-    <span style="font-size: 1em; color: #ff6838; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Plastique<%=@allPlastics>1 ? "s" : ""%> <%= @allPlastics %>
-    </span>
-    <span style="font-size: 1em; color: #ffc820; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Méta<%=@allmetals>1 ? "ux" : "l"%> <%= @allmetals %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #97c95c; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Papier<%=@allpapers>1 ? "s" : ""%> <%= @allpapers %>
-    </span>
-    <span style="font-size: 1em; color: #1cb2f6; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Verre<%=@allglass>1 ? "s" : ""%> <%= @allglass %>
-    </span>
-    <br>
-     <span style="font-size: 1em; color: #1685b8; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #cf6626; padding: 18px">
-      Total = <%= @totalwasteall %> déchet<%=@totalwasteall>1 ? "s" : ""%>
-    </span>
+
+
+    <div class="mega-div-dechet">
+      <div class="dechet-colonnes">
+        <div class="dechet-col-1">
+          <span style="font-size: 1em; color: #ff6838; ">
+            <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
+          </span>
+          <span style="font-size: 1em; color: #ffc820; ">
+            <i class="fas fa-dot-circle"></i> Métal <%= @allmetals %>
+          </span>
+
+          <span style="font-size: 1em; color: #97c95c; ">
+            <i class="fas fa-dot-circle"></i> Papier <%= @allpapers %>
+          </span>
+        </div>
+
+        <div class="dechet-col-2">
+          <span style="font-size: 1em; color: #1cb2f6; ">
+            <i class="fas fa-dot-circle"></i> Verre <%= @allglass %>
+          </span>
+          <span style="font-size: 1em; color: #1685b8; ">
+            <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
+          </span>
+        </div>
+        <br>
+
+      </div>
+
+      <span style="font-size: 1em; color: #cf6626; display: flex; justify-content: center; margin-top: 10px;">
+        Total = <%= @totalwasteall %>
+      </span>
+    </div>
+
+
   </div>
 </div>
 
-<div class="card-trip-scroll">
-  <div class="dash-content">
-    <div class="actions-content">
-      <h2>Mes actions</h2>
-    </div>
-    <% @user.activities.each do |activity| %>
-    <div class="actions-content">
-    <% if activity.waste %>
-    <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
 
-    <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
-    <p> <%= activity.address %></p>
-    <p>Félicitations ! 💪</p>
-      <% if activity.user == current_user %>
-        <%= link_to edit_activity_path(activity) do %>
-          <i class="fas fa-pencil-alt fa-sm"></i>
-        <% end %>
-      <% end %>
-    <% end %>
-    <% if activity.user == current_user %>
-      <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
-        <i class="far fa-trash-alt fa-sm"></i>
-      <% end %>
-    <% end %>
-    <div class="like">
-      <div class="heart">
-        <%= link_to "Voir l'action", activity_path(activity) %>
-        <i class="fas fa-heart" ></i>
-      </div>
-      <div class="like-count">
-        <%= activity.likes.count  %>
-      </div>
-    </div>
-    </div>
-    <% end %>
 
-  </div>
+  <div class="card-trip-scroll">
+    <div class="dash-content">
+
+<div class="actions-content">
+  <% if current_user == @user%>
+    <h2>Mes actions</h2>
+  <% else %>
+    <h2>Ses actions </h2>
+  <% end %>
 </div>
+      <% @user.activities.order(created_at: :desc).each do |activity| %>
+          <div class="actions-content">
+
+            <div class="carte-activite-description">
+              <% if activity.waste %>
+                <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
+
+                <p>Total collecté:
+                  <% @totaluser = 0 %>
+                  <% activity.wastes.each do |waste| %>
+                  <% @totaluser += waste.quantity %>
+                  <% end %>
+                  <%= @totaluser %>
+                </p>
+
+                <p><%= activity.address %></p>
+              <% end %>
+            </div>
+            <div class="carte-activite-boutons">
+              <% if activity.user == current_user %>
+                <%= link_to activity_path(activity), method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer cette action?' } do %>
+                <i class="far fa-trash-alt fa-sm" style="color: black;"></i>
+                <% end %>
+              <% end %>
+
+              <div class="lien-detail"><%= link_to "Voir détails", activity_path(activity) %></div>
+              <div class="like">
+                <div class="heart">
+                  <i class="fas fa-heart" ></i>
+                </div>
+                <div class="like-count">
+                  <%= activity.likes.count  %>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>

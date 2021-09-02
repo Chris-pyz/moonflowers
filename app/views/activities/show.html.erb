@@ -37,9 +37,15 @@
         <% end %>
       <% end %>
   </div>
-  <div class="total"> Total : <%=@total%> déchet<%=@total>1 ? "s" : ""%></div>
-  <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %><i class="far fa-trash-alt fa-sm trash" style="margin-bottom: 7px;"></i><% end %>
-</div>
+    <div class="total"> Total : <%=@total%> déchet<%=@total>1 ? "s" : ""%></div>
+
+    <% if @activity.user == current_user %>
+      <%= link_to activity_path, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer cette action?' } do %>
+      <i class="far fa-trash-alt fa-sm trash" style="margin-bottom: 7px; color: black;"></i>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>
 </div>
 
@@ -55,7 +61,8 @@
 </div>
 
 <div class="card-trip">
-  <div><br><h5>Lieu d'action</h5></div>
+<div class="dash-content">
+  <div class="textmiddle"><h5>Lieu d'action</h5></div>
 
   <div class="map-action-show">
       <div id="map"
@@ -64,4 +71,5 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
   </div>
+</div>
 </div>

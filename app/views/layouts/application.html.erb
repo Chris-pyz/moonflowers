@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moonflowers</title>
+    <title>MoonFlowers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,10 +15,14 @@
   <body style="background-color:#1ed2e452">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <% unless current_page?(root_path) %>
     <div class="thecontent">
+    <% end %>
     <%= yield %>
-
+    <% unless current_page?(root_path) %>
     </div>
+    <% end %>
+
     <%= render 'shared/footer' %>
   </body>
 </html>
