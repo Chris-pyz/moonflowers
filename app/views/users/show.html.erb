@@ -21,7 +21,7 @@
 
 <div class="card-trip">
   <div class="dash-content">
-    <h3 style="text-align: center; font-size: 26px;">Communauté Moonflower </h3>
+    <h3 style="text-align: center; font-size: 26px;">Communauté MoonFlowers </h3>
     <div class="donut" style="--first: <%= @allplasticsforchart %>; --second: <%= @allmetalsforchart %>; --third: <%= @allpapersforchart %>; --fourth: <%= @allglassforchart %>; --fifth: <%= @alldiversforchart %>">
       <div class="donut__slice donut__slice__first"></div>
       <div class="donut__slice donut__slice__second"></div>
@@ -84,7 +84,11 @@
     <div class="dash-content">
 
 <div class="actions-content">
-  <h2>Mes actions</h2>
+  <% if current_user == @user%>
+    <h2>Mes actions</h2>
+  <% else %>
+    <h2>Ses actions </h2>
+  <% end %>
 </div>
       <% @user.activities.order(created_at: :desc).each do |activity| %>
           <div class="actions-content">

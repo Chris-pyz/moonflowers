@@ -4,7 +4,6 @@
 }
 
 .mapboxgl-popup-content {
-
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
@@ -12,10 +11,12 @@
 .map-user-name {
   font-size: 13px;
   font-weight: bolder;
+  color: #4caf4fd5;
  }
 
 .map-address-activity {
   font-size: 8px;
+  font-weight: 500;
  }
 
 .activity_latitude {
