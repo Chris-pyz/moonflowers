@@ -82,8 +82,8 @@
         <div class="actions-content">
             <% if activity.waste %>
               <%= activity.created_at.to_time.strftime('%d/%m/%Y à %l:%M %p') %>
-              <p>Hey, tu as collecté, <%= activity.waste.quantity %> <%= activity.waste.material %>!</p>
-              <p> <%= activity.address %></p>
+              <p>Hey, le total de cette collecte s'élève à !</p>
+              <p> à l'adresse :<%= activity.address %></p>
               <p>Félicitations ! 💪</p>
             <% end %>
           <% if activity.user == current_user %>

@@ -17,27 +17,36 @@
         </div>
       </div>
     </div>
-    <span style="font-size: 1em; color: #ff6838; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
-    </span>
-    <span style="font-size: 1em; color: #ffc820; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Métal <%= @allmetals %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #97c95c; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Papier <%= @allpapers %>
-    </span>
-    <span style="font-size: 1em; color: #1cb2f6; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Verre <%= @allglass %>
-    </span>
-    <br>
-     <span style="font-size: 1em; color: #1685b8; padding: 18px">
-      <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
-    </span>
-    <br>
-    <span style="font-size: 1em; color: #cf6626; padding: 18px">
-      Total = <%= @totalwasteall %>
-    </span>
+    <div class="mega-div-dechet">
+    <div class="dechet-colonnes">
+        <div class="dechet-col-1">
+          <span style="font-size: 1em; color: #ff6838; ">
+            <i class="fas fa-dot-circle"></i> Plastique <%= @allPlastics %>
+          </span>
+          <span style="font-size: 1em; color: #ffc820; ">
+            <i class="fas fa-dot-circle"></i> Métal <%= @allmetals %>
+          </span>
+
+          <span style="font-size: 1em; color: #97c95c; ">
+            <i class="fas fa-dot-circle"></i> Papier <%= @allpapers %>
+          </span>
+        </div>
+
+        <div class="dechet-col-2">
+          <span style="font-size: 1em; color: #1cb2f6; ">
+            <i class="fas fa-dot-circle"></i> Verre <%= @allglass %>
+          </span>
+          <span style="font-size: 1em; color: #1685b8; ">
+            <i class="fas fa-dot-circle"></i> Divers <%= @alldivers %>
+          </span>
+        </div>
+        <br>
+      </div>
+
+      <span style="font-size: 1em; color: #cf6626; display: flex; justify-content: center; margin-top: 10px;">
+        Total = <%= @totalwasteall %>
+      </span>
+    </div>
   </div>
 </div>
 
