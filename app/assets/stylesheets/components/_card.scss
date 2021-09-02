@@ -55,3 +55,88 @@
     text-transform: uppercase;
   }
 }
+
+.carte-concept {
+  background-image: url('https://bernardgeorges.fr/wp-content/uploads/2021/01/Les-cites-du-futur.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 12px;
+  margin-bottom: 45px;
+}
+
+.carte-concept-contenu {
+  background-color: white;
+  width: 50%;
+  padding: 12px;
+  text-align: center;
+  opacity: 0.9;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    padding: 0;
+    text-transform: uppercase;
+
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+}
+
+.carte-profil {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 16px;
+  margin-bottom: 45px;
+}
+
+.carte-profil-identite {
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.carte-description-totale {
+  text-align: center;
+}
+
+.carte-profil-description {
+  p {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+
+.carte-activite-description {
+ p {
+   margin-bottom: 0;
+   font-size: 15px;
+ }
+}
+
+.carte-activite-boutons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.fa-trash-alt {
+  font-size: 22px;
+}
+
+.lien-detail {
+  a {
+    text-decoration: none;
+    background-color: #4caf4fd5;
+    color: white;
+    border-radius: 15px;
+    padding: 4px 20px;
+    text-align: center;
+
+  }
+}

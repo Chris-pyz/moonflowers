@@ -1,22 +1,13 @@
-
-// .banner img {
-//    width: 100%;
-//    background-position: center;
-// }
-
 .banner {
-  height: 450px;
+  height: 250px;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-bottom: 45px;
-  box-shadow: 3px 4px 5px #13915994;
-  border-radius: 5px;
-
+  margin-top: 85px;
 }
 
 .banner h1 {
@@ -24,7 +15,7 @@
   margin-bottom: 30px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 38px;
+  font-size: 34px;
   font-weight: bold;
   text-align: center;
 }
@@ -35,16 +26,6 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   text-align: center;
-}
-
-.banner a {
-  padding: 8px 24px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 15px;
-  color: whitesmoke;
-  // background-color: #38A3A5;
-  text-decoration: none;
 }
 
 .fa-recycle {
