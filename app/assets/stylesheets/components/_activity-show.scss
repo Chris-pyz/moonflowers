@@ -42,12 +42,22 @@
 
 .btnje {
   text-align: center;
-  // margin-top: 10px;
+  margin-top: 10px;
   // background-color: rgba(87,204,153,0.5);
   // border-radius: 5px;
   // padding: 10px;
 }
+
+.comm {
+  height: 80px;
+}
+
 .comm img {
   width: 3em;
+  padding-top: 10px;
+}
 
+.textmiddle {
+  text-align: center;
+  vertical-align: middle;;
 }
